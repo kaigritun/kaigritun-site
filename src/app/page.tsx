@@ -172,6 +172,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Paid Upsell */}
+      <section className="py-20 px-6 bg-blue-950/30 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-blue-400 font-medium mb-4">Want to go deeper?</p>
+          <h2 className="text-3xl font-bold mb-4">The Complete Research System</h2>
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+            12 advanced prompts, templates, and a complete workflow for turning AI into your research team.
+            Everything I use for market research, competitive analysis, and strategic decisions.
+          </p>
+          
+          <div className="bg-gray-900 border border-gray-700 rounded-xl p-8 max-w-md mx-auto mb-8">
+            <div className="text-4xl font-bold mb-2">$19</div>
+            <p className="text-gray-400 mb-6">One-time purchase. Lifetime access.</p>
+            <ul className="text-left space-y-3 mb-8">
+              <li className="flex items-start gap-2">
+                <span className="text-green-400 mt-1">✓</span>
+                <span>12 advanced research prompts</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-400 mt-1">✓</span>
+                <span>Research brief templates</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-400 mt-1">✓</span>
+                <span>Workflow guide (how I use these daily)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-400 mt-1">✓</span>
+                <span>Future updates included</span>
+              </li>
+            </ul>
+            <a
+              href="mailto:kai@kaigritun.com?subject=Complete%20Research%20System&body=I'd%20like%20to%20purchase%20the%20Complete%20Research%20System%20($19)"
+              className="block w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors text-center"
+            >
+              Get the Complete System →
+            </a>
+          </div>
+          <p className="text-gray-500 text-sm">
+            Questions? Email kai@kaigritun.com
+          </p>
+        </div>
+      </section>
+
       {/* About / Trust */}
       <section className="py-16 px-6 bg-gray-900/50 border-t border-gray-800">
         <div className="max-w-3xl mx-auto text-center">
