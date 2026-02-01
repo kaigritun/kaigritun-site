@@ -28,66 +28,139 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
-      {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-          Kai Gritun
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl">
-          Building tools that help people work smarter
-        </p>
-        <p className="text-gray-500 mb-12 max-w-xl">
-          AI productivity tools, research automation, and practical guides for getting more done with less effort.
-        </p>
-        <div className="flex gap-4 flex-wrap justify-center">
-          <a
-            href="#free"
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
-          >
-            Get Free Prompts
-          </a>
-          <a
-            href="#products"
-            className="px-8 py-3 border border-gray-700 hover:border-gray-500 rounded-lg font-medium transition-colors"
-          >
-            See What I Build
-          </a>
+      {/* Hero - Problem + Promise */}
+      <section className="min-h-[80vh] flex flex-col justify-center px-6 py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-blue-400 font-medium mb-4">Stop wasting hours on research</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Get Comprehensive Research Briefs in <span className="text-blue-400">15 Minutes</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            4 AI prompts that turn ChatGPT into your research assistant. 
+            Competitive analysis, market research, decision briefs — done fast.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="#get-prompts"
+              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
+            >
+              Get the Free Prompts →
+            </a>
+          </div>
+          <p className="text-gray-500 mt-4 text-sm">Free download. No credit card required.</p>
         </div>
       </section>
 
-      {/* Free Download */}
-      <section id="free" className="py-24 px-6 bg-gradient-to-b from-blue-950/30 to-gray-950 border-t border-gray-800">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-block px-4 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium mb-6">
-            Free Download
+      {/* Pain Points */}
+      <section className="py-16 px-6 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-8 text-center">Sound familiar?</h2>
+          <div className="space-y-4 text-lg text-gray-400">
+            <p>→ You spend hours Googling and still don't have clear answers</p>
+            <p>→ ChatGPT gives you generic, surface-level responses</p>
+            <p>→ You're making decisions without the full picture</p>
+            <p>→ Research reports take days when you need them in hours</p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            AI Research Prompts That Actually Work
-          </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            4 battle-tested prompts for quick research briefs. Get comprehensive analysis in minutes instead of hours. No fluff, just results.
+        </div>
+      </section>
+
+      {/* Solution */}
+      <section className="py-16 px-6 bg-gray-900/50 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4 text-center">The fix is simple</h2>
+          <p className="text-gray-400 text-lg text-center mb-8">
+            Most people use ChatGPT wrong for research. They ask vague questions and get vague answers.
+          </p>
+          <p className="text-gray-300 text-lg text-center">
+            These prompts are structured to extract <span className="text-white font-semibold">specific, actionable intelligence</span> — 
+            the kind consultants charge $500/hour to deliver.
+          </p>
+        </div>
+      </section>
+
+      {/* What You Get */}
+      <section className="py-16 px-6 border-t border-gray-800">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-12 text-center">What's included</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Quick Scan Prompt</h3>
+              <p className="text-gray-400">5-minute overview of any topic. Key facts, common misconceptions, best resources.</p>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Deep Dive Prompt</h3>
+              <p className="text-gray-400">Comprehensive 15-minute brief. History, current state, key players, future outlook.</p>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Competitive Analysis Prompt</h3>
+              <p className="text-gray-400">Compare 3+ options side-by-side. Strengths, weaknesses, best-fit recommendations.</p>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-2">Decision Brief Prompt</h3>
+              <p className="text-gray-400">Make better choices. Arguments for/against, risks, mitigation strategies.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 px-6 bg-gray-900/50 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-12 text-center">How it works</h2>
+          <div className="space-y-8">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="font-semibold mb-1">Copy the prompt</h3>
+                <p className="text-gray-400">Pick the prompt that matches your research need</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="font-semibold mb-1">Fill in your topic</h3>
+                <p className="text-gray-400">Replace [TOPIC] with what you're researching</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="font-semibold mb-1">Get your brief</h3>
+                <p className="text-gray-400">Receive a structured, comprehensive research brief in minutes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section id="get-prompts" className="py-20 px-6 border-t border-gray-800">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Get the prompts free</h2>
+          <p className="text-gray-400 mb-8">
+            Enter your email and I'll send them right over. Start doing better research today.
           </p>
           
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="you@example.com"
               required
               className="flex-1 px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white placeholder-gray-500"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 rounded-lg font-medium transition-colors whitespace-nowrap"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 rounded-lg font-semibold transition-colors whitespace-nowrap"
             >
-              {status === "loading" ? "Sending..." : "Get Free Prompts"}
+              {status === "loading" ? "Sending..." : "Send Me the Prompts"}
             </button>
           </form>
           
           {status === "success" && (
-            <p className="mt-4 text-green-400">Check your email for the download link!</p>
+            <p className="mt-4 text-green-400">Check your email! The prompts are on their way.</p>
           )}
           {status === "error" && (
             <p className="mt-4 text-red-400">Something went wrong. Try again?</p>
@@ -99,92 +172,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section className="py-24 px-6 border-t border-gray-800">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">About</h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            I create tools and resources that help people leverage AI to work more effectively. 
-            My focus is on practical applications — research automation, productivity systems, 
-            and guides that deliver real results without the hype.
+      {/* About / Trust */}
+      <section className="py-16 px-6 bg-gray-900/50 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-4">Who made this?</h2>
+          <p className="text-gray-400">
+            I'm Kai. I spend most of my time researching — markets, competitors, technologies, decisions. 
+            These prompts are what I actually use every day. They work.
           </p>
-        </div>
-      </section>
-
-      {/* Products */}
-      <section id="products" className="py-24 px-6 bg-gray-900/50 border-t border-gray-800">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">What I Build</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">AI Research Tools</h3>
-              <p className="text-gray-400">
-                Prompts and systems for fast, thorough research. Get comprehensive briefs in minutes, not hours.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-teal-600/20 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Productivity Courses</h3>
-              <p className="text-gray-400">
-                Practical guides for email, side projects, and getting things done. No fluff, just actionable steps.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">AI Setup Consulting</h3>
-              <p className="text-gray-400">
-                Need help setting up AI tools for your workflow? I help individuals and teams get up and running.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-24 px-6 border-t border-gray-800">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
-          <p className="text-gray-400 mb-8">
-            Have a question or want to work together? Reach out.
-          </p>
-          <div className="flex gap-6 justify-center">
-            <a
-              href="mailto:kai@kaigritun.com"
-              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              kai@kaigritun.com
-            </a>
+          <div className="mt-6 flex justify-center gap-4">
             <a
               href="https://x.com/kaigritun"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
               @kaigritun
+            </a>
+            <span className="text-gray-700">·</span>
+            <a
+              href="mailto:kai@kaigritun.com"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              kai@kaigritun.com
             </a>
           </div>
         </div>
@@ -192,7 +202,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} Kai Gritun. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Kai Gritun</p>
       </footer>
     </div>
   );
