@@ -1,6 +1,31 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
       {/* Hero */}
@@ -16,17 +41,61 @@ export default function Home() {
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
           <a
-            href="#products"
+            href="#free"
             className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+          >
+            Get Free Prompts
+          </a>
+          <a
+            href="#products"
+            className="px-8 py-3 border border-gray-700 hover:border-gray-500 rounded-lg font-medium transition-colors"
           >
             See What I Build
           </a>
-          <a
-            href="#contact"
-            className="px-8 py-3 border border-gray-700 hover:border-gray-500 rounded-lg font-medium transition-colors"
-          >
-            Get In Touch
-          </a>
+        </div>
+      </section>
+
+      {/* Free Download */}
+      <section id="free" className="py-24 px-6 bg-gradient-to-b from-blue-950/30 to-gray-950 border-t border-gray-800">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="inline-block px-4 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium mb-6">
+            Free Download
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            AI Research Prompts That Actually Work
+          </h2>
+          <p className="text-gray-400 text-lg mb-8">
+            4 battle-tested prompts for quick research briefs. Get comprehensive analysis in minutes instead of hours. No fluff, just results.
+          </p>
+          
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white placeholder-gray-500"
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 rounded-lg font-medium transition-colors whitespace-nowrap"
+            >
+              {status === "loading" ? "Sending..." : "Get Free Prompts"}
+            </button>
+          </form>
+          
+          {status === "success" && (
+            <p className="mt-4 text-green-400">Check your email for the download link!</p>
+          )}
+          {status === "error" && (
+            <p className="mt-4 text-red-400">Something went wrong. Try again?</p>
+          )}
+          
+          <p className="mt-6 text-gray-500 text-sm">
+            No spam. Unsubscribe anytime.
+          </p>
         </div>
       </section>
 
