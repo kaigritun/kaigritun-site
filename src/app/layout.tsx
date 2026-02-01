@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -7,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Kai Gritun — AI Tools & Productivity",
   description: "Building tools that help people work smarter. AI productivity tools, research automation, and practical guides.",
+  keywords: ["AI prompts", "research prompts", "ChatGPT prompts", "AI productivity", "research automation", "AI tools"],
   openGraph: {
     title: "Kai Gritun — AI Tools & Productivity",
     description: "Building tools that help people work smarter.",
@@ -29,8 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
-// Trigger redeploy
