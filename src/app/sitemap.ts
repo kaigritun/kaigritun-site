@@ -77,6 +77,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/mcp/mcp-performance-optimization`,
+      lastModified: new Date('2026-02-03'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     // Other pages
     {
       url: `${baseUrl}/services`,

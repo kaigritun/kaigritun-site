@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Performance Optimization",
+    description: "Speed up your MCP servers with connection pooling, caching strategies, async patterns, batching, and production monitoring. Reduce latency and handle more requests.",
+    href: "/mcp/mcp-performance-optimization",
+    date: "2026-02-03",
+    readTime: "15 min read",
+    tags: ["Performance", "Production"],
+  },
+  {
     title: "MCP Docker Deployment",
     description: "Containerize your MCP servers for production. Dockerfiles, docker-compose, health checks, multi-server architecture, and Kubernetes orchestration.",
     href: "/mcp/mcp-docker-deployment",
@@ -177,7 +185,7 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Building Production MCP Servers with Docker</li>
+            <li>→ Building MCP Clients</li>
             <li>→ MCP with Cursor and Other IDE Integrations</li>
             <li>→ Building MCP Servers for Databases</li>
             <li>→ MCP Server Monitoring and Observability</li>
