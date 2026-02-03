@@ -17,6 +17,14 @@ const tutorials = [
     tags: ["List", "Resources"],
   },
   {
+    title: "MCP Resources and Prompts: Complete Guide",
+    description: "Tools get all the attention, but Resources and Prompts are what make MCP servers powerful. Learn how to give AI rich context and reusable instructions.",
+    href: "/mcp/mcp-resources-prompts-guide",
+    date: "2026-02-03",
+    readTime: "10 min read",
+    tags: ["Advanced", "Deep Dive"],
+  },
+  {
     title: "How to Build an MCP Server in Python",
     description: "Step-by-step guide to creating your first MCP server. Connect Claude and other LLMs to custom tools in under 30 minutes.",
     href: "/mcp/how-to-build-mcp-server-python",
@@ -123,7 +131,7 @@ export default function MCPTutorials() {
           <ul className="space-y-3 text-gray-400">
             <li>→ Building an MCP Server in TypeScript</li>
             <li>→ Connecting MCP to Claude Desktop</li>
-            <li>→ Advanced MCP: Resources and Prompts</li>
+            <li>→ MCP Authentication: OAuth, API Keys, and Secrets</li>
             <li>→ Building Production MCP Servers with Docker</li>
           </ul>
         </div>
