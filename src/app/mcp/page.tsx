@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "Multi-Tenant MCP Architecture",
+    description: "Build secure MCP servers that serve multiple users or organizations. Covers tenant isolation, authentication, rate limiting, billing, and deployment patterns.",
+    href: "/mcp/multi-tenant-mcp-architecture",
+    date: "2026-02-03",
+    readTime: "20 min read",
+    tags: ["Advanced", "Production", "SaaS"],
+  },
+  {
     title: "MCP with Cursor, VS Code & IDEs",
     description: "Configure MCP servers in Cursor, VS Code with Cline/Continue, Windsurf, and other AI-powered IDEs. Step-by-step setup for each editor.",
     href: "/mcp/mcp-cursor-ide-setup",
@@ -201,10 +209,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Multi-Tenant MCP Architecture</li>
             <li>→ Building MCP Servers for Databases</li>
             <li>→ MCP Server Monitoring and Observability</li>
             <li>→ Real-time MCP with WebSockets</li>
+            <li>→ MCP Error Handling Patterns</li>
           </ul>
         </div>
       </section>
