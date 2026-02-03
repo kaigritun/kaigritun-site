@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "Claude Desktop MCP Setup Guide",
+    description: "Complete tutorial for configuring MCP servers with Anthropic's Claude Desktop. From first install to running multiple servers.",
+    href: "/mcp/claude-desktop-mcp-setup",
+    date: "2026-02-03",
+    readTime: "12 min read",
+    tags: ["Setup", "Beginner"],
+  },
+  {
     title: "MCP Troubleshooting Guide: Fix Common Server Issues",
     description: "Server failing silently? Tools not appearing? This guide covers the most common MCP problems and how to fix them fast.",
     href: "/mcp/troubleshooting-mcp-servers",
@@ -17,20 +25,20 @@ const tutorials = [
     tags: ["Debug", "Reference"],
   },
   {
-    title: "How to Build an MCP Server in TypeScript",
-    description: "Build production-ready MCP servers with the official TypeScript SDK. Type-safe tool creation with Zod schemas.",
-    href: "/mcp/how-to-build-mcp-server-typescript",
-    date: "2026-02-03",
-    readTime: "15 min read",
-    tags: ["TypeScript", "Intermediate"],
-  },
-  {
     title: "15 Best MCP Servers in 2025",
     description: "Curated list of the most useful MCP servers: GitHub, Playwright, databases, and more. Ranked by GitHub stars and real-world utility.",
     href: "/mcp/best-mcp-servers-2025",
     date: "2026-02-03",
     readTime: "10 min read",
     tags: ["List", "Resources"],
+  },
+  {
+    title: "How to Build an MCP Server in TypeScript",
+    description: "Build type-safe MCP servers with the official SDK. Covers Zod schemas, resource templates, and Claude Desktop integration.",
+    href: "/mcp/how-to-build-mcp-server-typescript",
+    date: "2026-02-03",
+    readTime: "15 min read",
+    tags: ["TypeScript", "Intermediate"],
   },
   {
     title: "MCP Resources and Prompts: Complete Guide",
@@ -145,10 +153,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Connecting MCP to Claude Desktop</li>
             <li>→ MCP Authentication: OAuth, API Keys, and Secrets</li>
             <li>→ Building Production MCP Servers with Docker</li>
-            <li>→ MCP Server Testing Strategies</li>
+            <li>→ MCP with Cursor and Other IDE Integrations</li>
+            <li>→ Building MCP Servers for Databases</li>
           </ul>
         </div>
       </section>
