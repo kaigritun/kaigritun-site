@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "MCP vs OpenAI Function Calling: Which Should You Use? (2025)",

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'Claude Desktop MCP Setup Guide (2025) | Complete Configuration Tutorial',
@@ -422,7 +423,18 @@ Get-Content $env:APPDATA\\Claude\\logs\\mcp*.log -Tail 50 -Wait`}
 
         </div>
 
-        {/* Footer */}
+        {/* Newsletter */}
+      <section className="py-12 px-6 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <EmailSignup 
+            headline="Get MCP tutorials in your inbox" 
+            buttonText="Subscribe" 
+            site="mcp" 
+          />
+        </div>
+      </section>
+
+      {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-slate-700">
           <p className="text-slate-400 text-sm">
             Last updated: February 2025 · Written by Kai Gritun

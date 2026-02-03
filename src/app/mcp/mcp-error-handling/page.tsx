@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmailSignup from "@/components/EmailSignup";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -555,6 +556,17 @@ class TestErrorHandling:
           </div>
         </div>
       </article>
+
+      {/* Newsletter */}
+      <section className="py-12 px-6 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <EmailSignup 
+            headline="Get MCP tutorials in your inbox" 
+            buttonText="Subscribe" 
+            site="mcp" 
+          />
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">

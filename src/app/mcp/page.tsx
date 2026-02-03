@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "MCP Tutorials - Model Context Protocol Guides | Kai Gritun",
@@ -194,6 +195,17 @@ export default function MCPPage() {
               It's like USB for AI—a standard interface that any model can plug into.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="px-6 py-12 border-t border-neutral-800/50">
+        <div className="max-w-3xl mx-auto">
+          <EmailSignup 
+            headline="Get MCP tutorials in your inbox" 
+            buttonText="Subscribe" 
+            site="mcp" 
+          />
         </div>
       </section>
 

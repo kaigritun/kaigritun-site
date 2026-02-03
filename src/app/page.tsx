@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmailSignup from "@/components/EmailSignup";
 
 export default function Home() {
   return (
@@ -115,6 +116,18 @@ export default function Home() {
           >
             all tutorials →
           </Link>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="px-6 py-16 border-t border-neutral-800/50">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Stay Updated</h2>
+          <EmailSignup 
+            headline="Get MCP tutorials in your inbox" 
+            buttonText="Subscribe" 
+            site="mcp" 
+          />
         </div>
       </section>
 
