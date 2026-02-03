@@ -9,16 +9,24 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
-    title: "Building MCP Clients: Connect Your App to MCP Servers",
-    description: "Learn how to build MCP clients in Python and TypeScript. Connect your application to any MCP server, discover tools, call functions, and build LLM-powered agents.",
+    title: "MCP with Cursor, VS Code & IDEs",
+    description: "Configure MCP servers in Cursor, VS Code with Cline/Continue, Windsurf, and other AI-powered IDEs. Step-by-step setup for each editor.",
+    href: "/mcp/mcp-cursor-ide-setup",
+    date: "2026-02-03",
+    readTime: "14 min read",
+    tags: ["IDE", "Setup"],
+  },
+  {
+    title: "Building MCP Clients",
+    description: "Connect to MCP servers from your own code. Build CLI tools, agents, and applications that use MCP servers programmatically.",
     href: "/mcp/building-mcp-clients",
     date: "2026-02-03",
     readTime: "15 min read",
-    tags: ["Clients", "Advanced"],
+    tags: ["Advanced", "Client"],
   },
   {
     title: "MCP Performance Optimization",
-    description: "Speed up your MCP servers with connection pooling, caching strategies, async patterns, batching, and production monitoring. Reduce latency and handle more requests.",
+    description: "Make your MCP servers fast. Connection pooling, caching strategies, async patterns, request batching, and monitoring.",
     href: "/mcp/mcp-performance-optimization",
     date: "2026-02-03",
     readTime: "15 min read",
@@ -193,10 +201,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ MCP with Cursor and Other IDE Integrations</li>
+            <li>→ Multi-Tenant MCP Architecture</li>
             <li>→ Building MCP Servers for Databases</li>
             <li>→ MCP Server Monitoring and Observability</li>
-            <li>→ Multi-Tenant MCP Architecture</li>
+            <li>→ Real-time MCP with WebSockets</li>
           </ul>
         </div>
       </section>
