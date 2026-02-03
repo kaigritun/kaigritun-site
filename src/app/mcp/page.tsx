@@ -16,7 +16,14 @@ const tutorials = [
     readTime: "12 min read",
     tags: ["Python", "Beginner"],
   },
-  // More tutorials coming soon
+  {
+    title: "MCP vs OpenAI Function Calling: Which Should You Use?",
+    description: "Comprehensive comparison of the two major approaches to AI tool integration. Learn the key differences, pros/cons, and when to use each.",
+    href: "/mcp/mcp-vs-function-calling",
+    date: "2026-02-03",
+    readTime: "8 min read",
+    tags: ["Comparison", "Architecture"],
+  },
 ];
 
 export default function MCPTutorials() {
@@ -106,7 +113,6 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ MCP vs OpenAI Function Calling: When to Use Each</li>
             <li>→ Best MCP Servers in 2025 (curated list)</li>
             <li>→ Building an MCP Server in TypeScript</li>
             <li>→ Connecting MCP to Claude Desktop</li>
