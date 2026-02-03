@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Database Integrations",
+    description: "Connect to PostgreSQL, MongoDB, Redis, SQLite.",
+    href: "/mcp/mcp-database-integrations",
+    tag: "Database",
+  },
+  {
     title: "MCP Webhooks & Event-Driven Patterns",
     description: "Build reactive servers that respond to external events.",
     href: "/mcp/mcp-webhooks-event-driven",
