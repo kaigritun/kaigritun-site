@@ -10,33 +10,21 @@ export const metadata: Metadata = {
 const tutorials = [
   {
     title: "MCP with LangChain Integration",
-    description: "Build AI agents combining LangChain with MCP tools.",
-    href: "/mcp/guides/mcp-langchain-integration",
-    tag: "Python",
+    description: "Connect MCP servers to LangChain for enhanced AI apps.",
+    href: "/mcp/mcp-langchain-integration",
+    tag: "Integration",
+  },
+  {
+    title: "Building Multi-Tool MCP Servers",
+    description: "Create servers that expose multiple related tools.",
+    href: "/mcp/building-multi-tool-servers",
+    tag: "Architecture",
   },
   {
     title: "MCP Error Handling Best Practices",
-    description: "Robust error handling, validation, and logging patterns.",
-    href: "/mcp/guides/mcp-error-handling",
+    description: "Robust error handling for production MCP servers.",
+    href: "/mcp/mcp-error-handling",
     tag: "Production",
-  },
-  {
-    title: "Deploying MCP Servers to Production",
-    description: "Docker, Kubernetes, monitoring, scaling, CI/CD.",
-    href: "/mcp/guides/mcp-production-deployment",
-    tag: "DevOps",
-  },
-  {
-    title: "Building RAG with MCP",
-    description: "Vector databases, embeddings, chunking, retrieval patterns.",
-    href: "/mcp/building-rag-with-mcp",
-    tag: "Advanced",
-  },
-  {
-    title: "MCP Database Integrations",
-    description: "Connect to PostgreSQL, MongoDB, Redis, SQLite.",
-    href: "/mcp/mcp-database-integrations",
-    tag: "Database",
   },
   {
     title: "MCP Webhooks & Event-Driven Patterns",
