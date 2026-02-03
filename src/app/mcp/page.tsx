@@ -41,6 +41,14 @@ const tutorials = [
     tags: ["TypeScript", "Intermediate"],
   },
   {
+    title: "MCP Authentication Guide: Secure Your Servers",
+    description: "Learn how to add authentication to MCP servers. Covers API keys, OAuth tokens, environment variables, secrets managers, and security best practices.",
+    href: "/mcp/mcp-authentication-guide",
+    date: "2026-02-03",
+    readTime: "12 min read",
+    tags: ["Security", "Intermediate"],
+  },
+  {
     title: "MCP Resources and Prompts: Complete Guide",
     description: "Tools get all the attention, but Resources and Prompts are what make MCP servers powerful. Learn how to give AI rich context and reusable instructions.",
     href: "/mcp/mcp-resources-prompts-guide",
@@ -153,10 +161,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ MCP Authentication: OAuth, API Keys, and Secrets</li>
             <li>→ Building Production MCP Servers with Docker</li>
             <li>→ MCP with Cursor and Other IDE Integrations</li>
             <li>→ Building MCP Servers for Databases</li>
+            <li>→ Testing MCP Servers: Unit and Integration Tests</li>
           </ul>
         </div>
       </section>
