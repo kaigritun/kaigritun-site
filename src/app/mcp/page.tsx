@@ -9,6 +9,24 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP with LangChain Integration",
+    description: "Build AI agents combining LangChain with MCP tools.",
+    href: "/mcp/guides/mcp-langchain-integration",
+    tag: "Python",
+  },
+  {
+    title: "MCP Error Handling Best Practices",
+    description: "Robust error handling, validation, and logging patterns.",
+    href: "/mcp/guides/mcp-error-handling",
+    tag: "Production",
+  },
+  {
+    title: "Deploying MCP Servers to Production",
+    description: "Docker, Kubernetes, monitoring, scaling, CI/CD.",
+    href: "/mcp/guides/mcp-production-deployment",
+    tag: "DevOps",
+  },
+  {
     title: "Building RAG with MCP",
     description: "Vector databases, embeddings, chunking, retrieval patterns.",
     href: "/mcp/building-rag-with-mcp",
