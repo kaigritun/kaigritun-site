@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "Building MCP Clients: Connect Your App to MCP Servers",
+    description: "Learn how to build MCP clients in Python and TypeScript. Connect your application to any MCP server, discover tools, call functions, and build LLM-powered agents.",
+    href: "/mcp/building-mcp-clients",
+    date: "2026-02-03",
+    readTime: "15 min read",
+    tags: ["Clients", "Advanced"],
+  },
+  {
     title: "MCP Performance Optimization",
     description: "Speed up your MCP servers with connection pooling, caching strategies, async patterns, batching, and production monitoring. Reduce latency and handle more requests.",
     href: "/mcp/mcp-performance-optimization",
@@ -185,10 +193,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Building MCP Clients</li>
             <li>→ MCP with Cursor and Other IDE Integrations</li>
             <li>→ Building MCP Servers for Databases</li>
             <li>→ MCP Server Monitoring and Observability</li>
+            <li>→ Multi-Tenant MCP Architecture</li>
           </ul>
         </div>
       </section>
