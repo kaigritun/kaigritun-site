@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "15 Best MCP Servers in 2025",
+    description: "Curated list of the most useful MCP servers: GitHub, Playwright, databases, and more. Ranked by GitHub stars and real-world utility.",
+    href: "/mcp/best-mcp-servers-2025",
+    date: "2026-02-03",
+    readTime: "10 min read",
+    tags: ["List", "Resources"],
+  },
+  {
     title: "How to Build an MCP Server in Python",
     description: "Step-by-step guide to creating your first MCP server. Connect Claude and other LLMs to custom tools in under 30 minutes.",
     href: "/mcp/how-to-build-mcp-server-python",
@@ -113,10 +121,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Best MCP Servers in 2025 (curated list)</li>
             <li>→ Building an MCP Server in TypeScript</li>
             <li>→ Connecting MCP to Claude Desktop</li>
             <li>→ Advanced MCP: Resources and Prompts</li>
+            <li>→ Building Production MCP Servers with Docker</li>
           </ul>
         </div>
       </section>
