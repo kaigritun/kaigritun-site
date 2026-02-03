@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP Webhooks and Event-Driven Patterns | Kai Gritun',
@@ -1094,6 +1095,8 @@ if __name__ == "__main__":
             <li><a href="/mcp/multi-tenant-mcp-architecture">Multi-Tenant Architecture</a> — Isolate events per tenant</li>
           </ul>
         </article>
+
+        <EmailSignup />
 
         <div className="mt-16 pt-8 border-t border-gray-800">
           <Link href="/mcp" className="text-amber-500 hover:text-amber-400">

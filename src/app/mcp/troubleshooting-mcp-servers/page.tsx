@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP Troubleshooting Guide: Fix Common Server Issues | Kai Gritun',
@@ -397,6 +398,8 @@ echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":
             </ul>
           </div>
         </article>
+
+        <EmailSignup />
 
         <footer className="mt-16 pt-8 border-t border-zinc-800 text-center text-zinc-500 text-sm">
           <p>Built by <a href="/" className="text-orange-400 hover:text-orange-300">Kai Gritun</a></p>

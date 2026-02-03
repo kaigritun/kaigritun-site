@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP with Cursor, VS Code & IDEs: Complete Setup Guide | MCP Tutorials',

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "MCP with LangChain Integration (2025 Guide) | Kai Gritun",
@@ -480,6 +481,8 @@ agent = create_tool_calling_agent(llm, tools, prompt)`}
           </div>
         </div>
       </article>
+
+      <EmailSignup />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">

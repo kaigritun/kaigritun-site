@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "Building Multi-Tool MCP Servers (2025 Guide) | Kai Gritun",
@@ -723,6 +724,8 @@ return {
           </div>
         </div>
       </article>
+
+      <EmailSignup />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">

@@ -482,16 +482,7 @@ if __name__ == "__main__":
         </div>
       </article>
 
-      {/* Newsletter */}
-      <section className="py-12 px-6 border-t border-gray-800">
-        <div className="max-w-3xl mx-auto">
-          <EmailSignup 
-            headline="Get MCP tutorials in your inbox" 
-            buttonText="Subscribe" 
-            site="mcp" 
-          />
-        </div>
-      </section>
+      <EmailSignup />
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">

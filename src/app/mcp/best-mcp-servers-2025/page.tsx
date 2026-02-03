@@ -766,18 +766,9 @@ def hello(name: str) -> str:
           </div>
         </article>
 
-        {/* Newsletter */}
-      <section className="py-12 px-6 border-t border-gray-800">
-        <div className="max-w-3xl mx-auto">
-          <EmailSignup 
-            headline="Get MCP tutorials in your inbox" 
-            buttonText="Subscribe" 
-            site="mcp" 
-          />
-        </div>
-      </section>
+        <EmailSignup />
 
-      {/* Footer */}
+        {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-gray-800">
           <p className="text-gray-500 text-sm">
             Star counts as of February 2025. Have a server to suggest?{" "}
