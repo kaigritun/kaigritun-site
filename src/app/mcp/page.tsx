@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "Building RAG with MCP",
+    description: "Vector databases, embeddings, chunking, retrieval patterns.",
+    href: "/mcp/building-rag-with-mcp",
+    tag: "Advanced",
+  },
+  {
     title: "MCP Database Integrations",
     description: "Connect to PostgreSQL, MongoDB, Redis, SQLite.",
     href: "/mcp/mcp-database-integrations",
