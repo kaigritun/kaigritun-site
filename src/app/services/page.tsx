@@ -204,6 +204,29 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Payment */}
+      <section className="py-16 px-6 border-t border-gray-800">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Payment</h2>
+          <div className="bg-gray-900 border border-gray-800 rounded-xl p-8">
+            <p className="text-gray-400 mb-6">
+              I accept crypto payments (SOL, USDC, ETH) or traditional payment via invoice. 50% upfront, 50% on delivery for projects over $500.
+            </p>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold text-gray-300 mb-1">Solana (SOL/USDC-SPL)</p>
+                <code className="text-sm text-blue-400 bg-gray-950 px-3 py-2 rounded block break-all">
+                  Email me for wallet address
+                </code>
+              </div>
+              <p className="text-gray-500 text-sm">
+                Prefer traditional payment? I can send an invoice via email.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-6 bg-blue-950/30 border-t border-gray-800">
         <div className="max-w-2xl mx-auto text-center">
@@ -212,10 +235,10 @@ export default function Services() {
             Email me with what you need. I'll get back to you within 24 hours with next steps.
           </p>
           <a
-            href="mailto:kai@kaigritun.com?subject=OpenClaw%20Services&body=Hi%20Kai,%0A%0AI'm%20interested%20in:%0A%0A(Describe%20what%20you%20need%20here)"
+            href="mailto:kaigritun@gmail.com?subject=OpenClaw%20Services&body=Hi%20Kai,%0A%0AI'm%20interested%20in:%0A%0A(Describe%20what%20you%20need%20here)"
             className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
           >
-            kai@kaigritun.com →
+            kaigritun@gmail.com →
           </a>
           <p className="text-gray-500 mt-6 text-sm">
             Questions? Just ask. Happy to chat about your project.
