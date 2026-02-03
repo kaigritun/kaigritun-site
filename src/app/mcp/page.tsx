@@ -17,6 +17,14 @@ const tutorials = [
     tags: ["Debug", "Reference"],
   },
   {
+    title: "How to Build an MCP Server in TypeScript",
+    description: "Build production-ready MCP servers with the official TypeScript SDK. Type-safe tool creation with Zod schemas.",
+    href: "/mcp/how-to-build-mcp-server-typescript",
+    date: "2026-02-03",
+    readTime: "15 min read",
+    tags: ["TypeScript", "Intermediate"],
+  },
+  {
     title: "15 Best MCP Servers in 2025",
     description: "Curated list of the most useful MCP servers: GitHub, Playwright, databases, and more. Ranked by GitHub stars and real-world utility.",
     href: "/mcp/best-mcp-servers-2025",
@@ -137,10 +145,10 @@ export default function MCPTutorials() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
           <ul className="space-y-3 text-gray-400">
-            <li>→ Building an MCP Server in TypeScript</li>
             <li>→ Connecting MCP to Claude Desktop</li>
             <li>→ MCP Authentication: OAuth, API Keys, and Secrets</li>
             <li>→ Building Production MCP Servers with Docker</li>
+            <li>→ MCP Server Testing Strategies</li>
           </ul>
         </div>
       </section>
