@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Error Handling Patterns",
+    description: "Build robust MCP servers that fail gracefully. Learn error codes, retry logic, graceful degradation, recovery hints, and user-friendly error messages.",
+    href: "/mcp/mcp-error-handling-patterns",
+    date: "2026-02-03",
+    readTime: "18 min read",
+    tags: ["Best Practices", "Production"],
+  },
+  {
     title: "Multi-Tenant MCP Architecture",
     description: "Build secure MCP servers that serve multiple users or organizations. Covers tenant isolation, authentication, rate limiting, billing, and deployment patterns.",
     href: "/mcp/multi-tenant-mcp-architecture",
@@ -212,7 +220,7 @@ export default function MCPTutorials() {
             <li>→ Building MCP Servers for Databases</li>
             <li>→ MCP Server Monitoring and Observability</li>
             <li>→ Real-time MCP with WebSockets</li>
-            <li>→ MCP Error Handling Patterns</li>
+            <li>→ MCP Webhooks and Event-Driven Patterns</li>
           </ul>
         </div>
       </section>
