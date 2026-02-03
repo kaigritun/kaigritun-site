@@ -17,12 +17,28 @@ const tutorials = [
     tags: ["Setup", "Beginner"],
   },
   {
+    title: "Testing MCP Servers: A Complete Guide",
+    description: "From quick validation with MCP Inspector to full CI/CD pipelines. Unit tests, integration tests, and mocking patterns for Python and TypeScript.",
+    href: "/mcp/testing-mcp-servers",
+    date: "2026-02-03",
+    readTime: "12 min read",
+    tags: ["Testing", "Best Practices"],
+  },
+  {
     title: "MCP Troubleshooting Guide: Fix Common Server Issues",
     description: "Server failing silently? Tools not appearing? This guide covers the most common MCP problems and how to fix them fast.",
     href: "/mcp/troubleshooting-mcp-servers",
     date: "2026-02-03",
     readTime: "10 min read",
     tags: ["Debug", "Reference"],
+  },
+  {
+    title: "MCP Authentication Guide",
+    description: "Secure your MCP servers with proper credential handling. Environment variables, OAuth tokens, secrets managers, and multi-environment configs.",
+    href: "/mcp/mcp-authentication-guide",
+    date: "2026-02-03",
+    readTime: "14 min read",
+    tags: ["Security", "Production"],
   },
   {
     title: "15 Best MCP Servers in 2025",
@@ -39,14 +55,6 @@ const tutorials = [
     date: "2026-02-03",
     readTime: "15 min read",
     tags: ["TypeScript", "Intermediate"],
-  },
-  {
-    title: "MCP Authentication Guide: Secure Your Servers",
-    description: "Learn how to add authentication to MCP servers. Covers API keys, OAuth tokens, environment variables, secrets managers, and security best practices.",
-    href: "/mcp/mcp-authentication-guide",
-    date: "2026-02-03",
-    readTime: "12 min read",
-    tags: ["Security", "Intermediate"],
   },
   {
     title: "MCP Resources and Prompts: Complete Guide",
@@ -164,7 +172,7 @@ export default function MCPTutorials() {
             <li>→ Building Production MCP Servers with Docker</li>
             <li>→ MCP with Cursor and Other IDE Integrations</li>
             <li>→ Building MCP Servers for Databases</li>
-            <li>→ Testing MCP Servers: Unit and Integration Tests</li>
+            <li>→ MCP Server Monitoring and Observability</li>
           </ul>
         </div>
       </section>
