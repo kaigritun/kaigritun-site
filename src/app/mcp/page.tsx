@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Docker Deployment",
+    description: "Containerize your MCP servers for production. Dockerfiles, docker-compose, health checks, multi-server architecture, and Kubernetes orchestration.",
+    href: "/mcp/mcp-docker-deployment",
+    date: "2026-02-03",
+    readTime: "15 min read",
+    tags: ["DevOps", "Production"],
+  },
+  {
     title: "Claude Desktop MCP Setup Guide",
     description: "Complete tutorial for configuring MCP servers with Anthropic's Claude Desktop. From first install to running multiple servers.",
     href: "/mcp/claude-desktop-mcp-setup",
