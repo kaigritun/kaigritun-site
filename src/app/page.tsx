@@ -2,130 +2,145 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
-      {/* Hero */}
-      <section className="min-h-[70vh] flex flex-col justify-center px-6 py-16">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Hey, I'm Kai
-          </h1>
-          <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-            I build AI tools and write about making them useful. 
-            Focused on developer productivity, AI agents, and automation that actually works.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/blog"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
-            >
-              Read the Blog
-            </Link>
-            <a
-              href="https://github.com/kaigritun"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-medium transition-colors"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://x.com/kaigritun"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-medium transition-colors"
-            >
-              @kaigritun
-            </a>
+    <div className="min-h-screen bg-[#0c0c0c] text-neutral-100">
+      {/* Nav */}
+      <nav className="px-6 py-4 border-b border-neutral-800/50">
+        <div className="max-w-2xl mx-auto flex items-center justify-between">
+          <Link href="/" className="font-semibold tracking-tight">kai</Link>
+          <div className="flex gap-6 text-sm text-neutral-400">
+            <Link href="/mcp" className="hover:text-amber-500 transition-colors">mcp</Link>
+            <Link href="/blog" className="hover:text-amber-500 transition-colors">blog</Link>
+            <a href="https://github.com/kaigritun" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">github</a>
           </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="px-6 py-24">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-amber-500 font-mono text-sm mb-4">building things that work</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Kai Gritun
+          </h1>
+          <p className="text-lg text-neutral-400 leading-relaxed max-w-xl">
+            I build AI tools and write about making them useful. 
+            Currently deep in MCP servers, AI agents, and automation that doesn't suck.
+          </p>
         </div>
       </section>
 
-      {/* What I'm Working On */}
-      <section className="py-16 px-6 border-t border-gray-800">
+      {/* Current Focus */}
+      <section className="px-6 py-16 border-t border-neutral-800/50">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">What I'm Working On</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <h3 className="font-semibold text-lg mb-2">AI Agent Infrastructure</h3>
-              <p className="text-gray-400 mb-3">
-                Building and configuring AI agents that do real work. 
-                Setup guides, custom skills, production deployments.
-              </p>
-              <Link href="/blog" className="text-blue-400 hover:text-blue-300">
-                Read my guides →
+          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-8">Current Focus</h2>
+          
+          <div className="space-y-8">
+            <div className="group">
+              <Link href="/mcp" className="block">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="font-semibold group-hover:text-amber-500 transition-colors">MCP Tutorials</h3>
+                  <span className="text-sm text-neutral-500">15 guides</span>
+                </div>
+                <p className="text-neutral-400 text-sm">
+                  Complete guides on Model Context Protocol. From first server to production deployment.
+                </p>
               </Link>
             </div>
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <h3 className="font-semibold text-lg mb-2">Open Source Contributions</h3>
-              <p className="text-gray-400 mb-3">
-                Contributing to AI/developer tools. 
-                Bug fixes, features, documentation for projects I use.
-              </p>
-              <a 
-                href="https://github.com/kaigritun" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300"
-              >
-                See my work →
+
+            <div className="group">
+              <a href="https://github.com/kaigritun" target="_blank" rel="noopener noreferrer" className="block">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="font-semibold group-hover:text-amber-500 transition-colors">Open Source</h3>
+                  <span className="text-sm text-neutral-500">github</span>
+                </div>
+                <p className="text-neutral-400 text-sm">
+                  Contributing to AI and dev tools. Stuff I actually use.
+                </p>
               </a>
             </div>
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <h3 className="font-semibold text-lg mb-2">MCP Servers</h3>
-              <p className="text-gray-400 mb-3">
-                Model Context Protocol servers for connecting AI to external tools and data.
-              </p>
-              <Link href="/mcp" className="text-blue-400 hover:text-blue-300">
-                Explore MCP →
+
+            <div className="group">
+              <Link href="/blog" className="block">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h3 className="font-semibold group-hover:text-amber-500 transition-colors">Writing</h3>
+                  <span className="text-sm text-neutral-500">blog</span>
+                </div>
+                <p className="text-neutral-400 text-sm">
+                  Notes on building, shipping, and making AI actually do things.
+                </p>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Recent Writing */}
-      <section className="py-16 px-6 bg-gray-900/50 border-t border-gray-800">
+      {/* Latest */}
+      <section className="px-6 py-16 border-t border-neutral-800/50">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">Recent Writing</h2>
+          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-8">Latest</h2>
+          
           <div className="space-y-4">
             <Link 
-              href="/blog/openclaw-setup-guide"
-              className="block p-4 bg-gray-900 border border-gray-800 rounded-lg hover:border-gray-700 transition-colors"
+              href="/mcp/mcp-error-handling-patterns"
+              className="block py-3 group"
             >
-              <h3 className="font-semibold mb-1">Complete OpenClaw Setup Guide</h3>
-              <p className="text-gray-400 text-sm">
-                Everything you need to get OpenClaw running: installation, configuration, and common issues.
-              </p>
+              <div className="flex items-baseline justify-between">
+                <span className="group-hover:text-amber-500 transition-colors">MCP Error Handling Patterns</span>
+                <span className="text-sm text-neutral-600 font-mono">feb 3</span>
+              </div>
+            </Link>
+            <Link 
+              href="/mcp/multi-tenant-mcp-architecture"
+              className="block py-3 group"
+            >
+              <div className="flex items-baseline justify-between">
+                <span className="group-hover:text-amber-500 transition-colors">Multi-Tenant MCP Architecture</span>
+                <span className="text-sm text-neutral-600 font-mono">feb 3</span>
+              </div>
+            </Link>
+            <Link 
+              href="/mcp/building-mcp-clients"
+              className="block py-3 group"
+            >
+              <div className="flex items-baseline justify-between">
+                <span className="group-hover:text-amber-500 transition-colors">Building MCP Clients</span>
+                <span className="text-sm text-neutral-600 font-mono">feb 3</span>
+              </div>
             </Link>
           </div>
+
           <Link 
-            href="/blog"
-            className="inline-block mt-6 text-blue-400 hover:text-blue-300"
+            href="/mcp" 
+            className="inline-block mt-6 text-sm text-neutral-500 hover:text-amber-500 transition-colors"
           >
-            View all posts →
+            all tutorials →
           </Link>
         </div>
       </section>
 
       {/* Contact */}
-      <section className="py-16 px-6 border-t border-gray-800">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-gray-400 mb-6">
-            Working on something interesting? Want to collaborate? I'm always open to chat.
-          </p>
-          <a
-            href="mailto:kai@kaigritun.com"
-            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
-          >
-            kai@kaigritun.com
-          </a>
+      <section className="px-6 py-16 border-t border-neutral-800/50">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Contact</h2>
+          <div className="flex flex-wrap gap-6 text-sm">
+            <a href="mailto:kai@kaigritun.com" className="text-neutral-400 hover:text-amber-500 transition-colors">
+              kai@kaigritun.com
+            </a>
+            <a href="https://x.com/kaigritun" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-amber-500 transition-colors">
+              @kaigritun
+            </a>
+            <a href="https://github.com/kaigritun" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-amber-500 transition-colors">
+              github
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} Kai Gritun</p>
+      <footer className="px-6 py-8 border-t border-neutral-800/50">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-neutral-600 text-sm font-mono">© {new Date().getFullYear()}</p>
+        </div>
       </footer>
     </div>
   );

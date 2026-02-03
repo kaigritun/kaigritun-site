@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0c0c;
+  --foreground: #e8e8e8;
+  --accent: #f59e0b;
+  --accent-dim: #d97706;
+  --muted: #737373;
+  --border: #262626;
 }
 
 @theme inline {
@@ -12,53 +16,54 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Article typography styles */
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Article typography */
 article h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #fff;
+  letter-spacing: -0.02em;
 }
 
 article h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: #fff;
 }
 
 article h4 {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: #e5e5e5;
 }
 
 article p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-  color: #d1d5db;
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: #a3a3a3;
 }
 
 article ul, article ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
 }
 
 article ul {
@@ -71,31 +76,52 @@ article ol {
 
 article li {
   margin-bottom: 0.5rem;
-  line-height: 1.6;
-  color: #d1d5db;
+  line-height: 1.65;
+  color: #a3a3a3;
 }
 
 article code {
-  background: #1f2937;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  font-size: 0.9em;
-  color: #f9fafb;
+  background: #171717;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+  color: #fbbf24;
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
 article pre code {
   background: transparent;
   padding: 0;
+  color: inherit;
 }
 
 article a {
-  color: #60a5fa;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
 }
 
 article a:hover {
-  color: #93c5fd;
+  border-bottom-color: var(--accent);
 }
 
 article strong {
   color: #fff;
+  font-weight: 600;
+}
+
+article blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #a3a3a3;
+  font-style: italic;
+}
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
