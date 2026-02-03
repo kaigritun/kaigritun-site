@@ -24,3 +24,78 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Article typography styles */
+article h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+article h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+article h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+article p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+article ul, article ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+article ul {
+  list-style-type: disc;
+}
+
+article ol {
+  list-style-type: decimal;
+}
+
+article li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+article code {
+  background: #1f2937;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  color: #f9fafb;
+}
+
+article pre code {
+  background: transparent;
+  padding: 0;
+}
+
+article a {
+  color: #60a5fa;
+}
+
+article a:hover {
+  color: #93c5fd;
+}
+
+article strong {
+  color: #fff;
+}
