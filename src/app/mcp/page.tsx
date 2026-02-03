@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Webhooks & Event-Driven Patterns",
+    description: "Build reactive servers that respond to external events.",
+    href: "/mcp/mcp-webhooks-event-driven",
+    tag: "Advanced",
+  },
+  {
     title: "MCP Error Handling Patterns",
     description: "Build robust MCP servers that fail gracefully.",
     href: "/mcp/mcp-error-handling-patterns",
