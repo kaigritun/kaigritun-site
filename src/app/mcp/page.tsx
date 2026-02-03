@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP Troubleshooting Guide: Fix Common Server Issues",
+    description: "Server failing silently? Tools not appearing? This guide covers the most common MCP problems and how to fix them fast.",
+    href: "/mcp/troubleshooting-mcp-servers",
+    date: "2026-02-03",
+    readTime: "10 min read",
+    tags: ["Debug", "Reference"],
+  },
+  {
     title: "15 Best MCP Servers in 2025",
     description: "Curated list of the most useful MCP servers: GitHub, Playwright, databases, and more. Ranked by GitHub stars and real-world utility.",
     href: "/mcp/best-mcp-servers-2025",
