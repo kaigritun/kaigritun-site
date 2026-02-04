@@ -15,6 +15,12 @@ const tutorials = [
     tag: "Beginner",
   },
   {
+    title: "10 Practical MCP Use Cases (With Code)",
+    description: "Real-world examples from knowledge bases to smart home control.",
+    href: "/mcp/mcp-use-cases",
+    tag: "Inspiration",
+  },
+  {
     title: "MCP Server Directory",
     description: "Browse 30+ MCP servers with search and filtering.",
     href: "/mcp/servers",
