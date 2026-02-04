@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
+import EmailSignup from "@/components/EmailSignup";
 
 export default function MCPStarterKitPage() {
   const [email, setEmail] = useState('');
@@ -427,6 +428,8 @@ CMD ["node", "dist/index.js"]`}
           )}
         </div>
       </article>
+        <EmailSignup />
+
 
       {/* Footer */}
       <footer className="border-t border-neutral-800/50 px-6 py-8 text-center text-neutral-500 text-sm">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useMemo } from "react";
+import EmailSignup from "@/components/EmailSignup";
 
 const servers = [
   // Official / Major Company Servers
@@ -517,6 +518,8 @@ export default function MCPServersDirectory() {
           </div>
         </div>
       </section>
+        <EmailSignup />
+
 
       {/* Footer */}
       <footer className="px-6 py-8 border-t border-neutral-800/50">

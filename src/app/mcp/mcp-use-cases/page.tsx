@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: '10 Practical MCP Use Cases (With Code) | Real-World Examples',
@@ -594,6 +595,8 @@ def run_scene(scene_name: str) -> str:
           </section>
 
         </div>
+        <EmailSignup />
+
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-slate-700">

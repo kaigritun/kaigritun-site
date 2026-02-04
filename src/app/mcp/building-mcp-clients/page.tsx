@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'Building MCP Clients: Connect Your App to MCP Servers | Kai Gritun',
@@ -744,6 +745,8 @@ if __name__ == "__main__":
           </p>
         </article>
       </div>
+
+        <EmailSignup />
     </main>
   )
 }

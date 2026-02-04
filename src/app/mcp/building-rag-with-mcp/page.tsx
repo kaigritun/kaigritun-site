@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'Building RAG with MCP - Complete Implementation Guide | Kai Gritun',
@@ -980,6 +981,8 @@ if __name__ == "__main__":
           </p>
 
         </div>
+        <EmailSignup />
+
 
         <footer className="mt-16 pt-8 border-t border-gray-800">
           <Link 

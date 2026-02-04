@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP Observability: Monitoring Your AI Tool Integrations | Kai Gritun',

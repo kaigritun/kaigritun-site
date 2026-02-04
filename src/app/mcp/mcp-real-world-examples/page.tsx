@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: '5 Real-World MCP Server Examples - Production Code',

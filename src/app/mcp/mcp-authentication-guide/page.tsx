@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP Authentication Guide: Secure Your MCP Servers | Kai Gritun',
@@ -611,6 +612,8 @@ server.connect(transport);`}</code>
             </ul>
           </div>
         </div>
+        <EmailSignup />
+
 
         <footer className="mt-16 pt-8 border-t border-zinc-800">
           <a href="/mcp" className="text-blue-400 hover:text-blue-300">

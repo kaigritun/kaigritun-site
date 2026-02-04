@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP for Beginners: Complete Guide to Model Context Protocol (2025)',
@@ -470,6 +471,8 @@ def read_file(filename: str) -> str:
           </section>
 
         </div>
+        <EmailSignup />
+
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-slate-700">

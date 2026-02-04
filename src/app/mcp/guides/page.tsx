@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "MCP Guides - Advanced Model Context Protocol Tutorials | Kai Gritun",
@@ -97,6 +98,8 @@ export default function MCPGuidesPage() {
           </Link>
         </div>
       </section>
+        <EmailSignup />
+
 
       {/* Footer */}
       <footer className="px-6 py-8 border-t border-neutral-800/50">

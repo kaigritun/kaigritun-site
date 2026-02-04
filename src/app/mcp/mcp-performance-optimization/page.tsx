@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: 'MCP Performance Optimization: Speed Up Your Servers | Kai Gritun',

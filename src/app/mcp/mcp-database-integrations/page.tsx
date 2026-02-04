@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "MCP Database Integrations: PostgreSQL, MongoDB, Redis | Complete Guide",

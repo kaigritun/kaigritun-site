@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
   title: "Building MCP Servers with LangChain and LlamaIndex | MCP Tutorials",
