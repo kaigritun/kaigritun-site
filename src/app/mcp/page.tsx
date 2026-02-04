@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 
 const tutorials = [
   {
+    title: "MCP for Beginners: Complete Guide",
+    description: "Learn MCP from scratch. Build your first server in 5 minutes.",
+    href: "/mcp/mcp-beginners-guide",
+    tag: "Beginner",
+  },
+  {
     title: "MCP Server Directory",
     description: "Browse 30+ MCP servers with search and filtering.",
     href: "/mcp/servers",
