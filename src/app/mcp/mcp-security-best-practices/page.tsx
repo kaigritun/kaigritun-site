@@ -1,335 +1,333 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import EmailSignup from "@/components/EmailSignup";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MCP Security Best Practices: Protecting Your Server",
-  description:
-    "Essential security practices for MCP servers: input validation, path traversal prevention, rate limiting, secrets management, and audit logging.",
-  openGraph: {
-    title: "MCP Security Best Practices: Protecting Your Server",
-    description:
-      "Essential security practices for MCP servers: input validation, path traversal prevention, rate limiting, secrets management, and audit logging.",
-    type: "article",
-    publishedTime: "2025-02-04",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "MCP Security Best Practices",
-    description: "Protect your MCP servers from common vulnerabilities",
-  },
+  title: "MCP Security Best Practices (2026 Guide) | Kai Gritun",
+  description: "Essential security practices for MCP server development. Input validation, rate limiting, secrets management, and audit logging for AI tool integrations.",
+  keywords: ["MCP security", "MCP server security", "Model Context Protocol security", "AI security", "LLM security", "MCP best practices"],
 };
 
 export default function MCPSecurityBestPractices() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16">
-      <div className="mb-8">
-        <Link href="/mcp" className="text-gray-400 hover:text-white transition">
-          ← Back to MCP Tutorials
-        </Link>
-      </div>
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Header */}
+      <header className="border-b border-gray-800">
+        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="font-semibold hover:text-blue-400 transition-colors">
+            Kai Gritun
+          </Link>
+          <nav className="flex gap-6 text-sm text-gray-400">
+            <Link href="/mcp" className="hover:text-white transition-colors">MCP Tutorials</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+          </nav>
+        </div>
+      </header>
 
-      <article className="prose prose-lg prose-invert max-w-none">
-        <h1 className="text-4xl font-bold mb-4">
-          MCP Security Best Practices: Protecting Your Server
-        </h1>
+      {/* Article */}
+      <article className="py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          {/* Meta */}
+          <div className="mb-8">
+            <Link href="/mcp" className="text-blue-400 hover:text-blue-300 text-sm mb-4 inline-block">
+              ← Back to MCP Tutorials
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              MCP Security Best Practices
+            </h1>
+            <p className="text-gray-400 text-lg mb-4">
+              MCP servers have direct access to AI models and often to sensitive systems. 
+              Security isn't optional—it's fundamental.
+            </p>
+            <div className="flex gap-4 text-sm text-gray-500">
+              <span>February 4, 2026</span>
+              <span>·</span>
+              <span>12 min read</span>
+            </div>
+          </div>
 
-        <p className="text-gray-400 text-sm mb-8">
-          Published February 4, 2025 · 20 min read
-        </p>
+          {/* Content */}
+          <div className="prose prose-invert prose-lg max-w-none">
+            <h2 className="text-2xl font-bold mt-12 mb-4">The MCP Threat Model</h2>
+            <p>MCP servers face unique risks:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <li><strong>Prompt injection</strong> - Malicious prompts trying to manipulate tool calls</li>
+              <li><strong>Data exfiltration</strong> - Tools being tricked into leaking sensitive data</li>
+              <li><strong>Privilege escalation</strong> - Gaining access beyond intended permissions</li>
+              <li><strong>Resource exhaustion</strong> - DOS through expensive operations</li>
+            </ul>
+            <p>Understanding these helps you build defenses.</p>
 
-        <p className="lead text-xl text-gray-300">
-          MCP servers often have access to sensitive data and system resources. A poorly 
-          secured server is an attack vector. This guide covers the security practices 
-          every MCP developer should implement.
-        </p>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Input Validation</h2>
+            <p>Never trust tool inputs. Ever.</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`from pydantic import BaseModel, validator, constr
+import re
 
-        <h2>The Threat Model</h2>
-
-        <p>MCP servers sit between AI assistants and your systems. Threats include:</p>
-
-        <ul>
-          <li><strong>Prompt injection</strong>: Malicious prompts trying to manipulate tool calls</li>
-          <li><strong>Data exfiltration</strong>: Unauthorized access to sensitive information</li>
-          <li><strong>Resource abuse</strong>: Denial of service through excessive requests</li>
-          <li><strong>Privilege escalation</strong>: Gaining access beyond intended scope</li>
-        </ul>
-
-        <h2>Input Validation</h2>
-
-        <p>Never trust input. Ever.</p>
-
-        <pre><code className="language-typescript">{`import { z } from "zod";
-
-// Define strict schemas
-const FileReadSchema = z.object({
-  path: z.string()
-    .max(500)
-    .refine(
-      (p) => !p.includes("..") && !p.startsWith("/"),
-      "Path traversal not allowed"
-    ),
-  encoding: z.enum(["utf8", "base64"]).default("utf8")
-});
-
-const DatabaseQuerySchema = z.object({
-  query: z.string().max(1000),
-  // Whitelist allowed operations
-  operation: z.enum(["SELECT", "COUNT"]),
-  table: z.enum(["users", "products", "orders"]),
-  limit: z.number().int().min(1).max(100).default(10)
-});
-
-function handleToolCall(name: string, args: unknown) {
-  // Validate before processing
-  const validated = FileReadSchema.safeParse(args);
-  if (!validated.success) {
-    return {
-      content: [{ type: "text", text: "Invalid parameters" }],
-      isError: true
-    };
-  }
-  // Now safe to use validated.data
-}`}</code></pre>
-
-        <h2>Path Traversal Prevention</h2>
-
-        <p>File operations are high-risk. Contain them.</p>
-
-        <pre><code className="language-typescript">{`import path from "path";
-import { realpath } from "fs/promises";
-
-const ALLOWED_BASE = "/app/data";
-
-async function safePath(userPath: string): Promise<string> {
-  // Resolve to absolute path
-  const resolved = path.resolve(ALLOWED_BASE, userPath);
-  
-  // Get real path (resolves symlinks)
-  const real = await realpath(resolved);
-  
-  // Verify still within allowed directory
-  if (!real.startsWith(ALLOWED_BASE)) {
-    throw new Error("Access denied: path outside allowed directory");
-  }
-  
-  return real;
-}
-
-// Use it
-async function readFile(userPath: string) {
-  const safe = await safePath(userPath);
-  return fs.readFile(safe, "utf8");
-}`}</code></pre>
-
-        <h2>Rate Limiting</h2>
-
-        <p>Prevent abuse with request limits.</p>
-
-        <pre><code className="language-typescript">{`class RateLimiter {
-  private requests: Map<string, number[]> = new Map();
-  
-  constructor(
-    private maxRequests: number,
-    private windowMs: number
-  ) {}
-  
-  check(key: string): boolean {
-    const now = Date.now();
-    const timestamps = this.requests.get(key) || [];
+class FileReadInput(BaseModel):
+    path: constr(max_length=500)
     
-    // Remove old timestamps
-    const valid = timestamps.filter(t => now - t < this.windowMs);
+    @validator('path')
+    def validate_path(cls, v):
+        # Prevent path traversal
+        if '..' in v:
+            raise ValueError('Path traversal not allowed')
+        
+        # Whitelist allowed directories
+        allowed_prefixes = ['/home/user/documents/', '/tmp/mcp/']
+        if not any(v.startswith(p) for p in allowed_prefixes):
+            raise ValueError('Path not in allowed directories')
+        
+        # Block sensitive files
+        blocked = ['.env', 'secrets', 'credentials', '.ssh']
+        if any(b in v.lower() for b in blocked):
+            raise ValueError('Access to sensitive files blocked')
+        
+        return v`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Principle of Least Privilege</h2>
+            <p>Tools should have minimal permissions:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import os
+from pathlib import Path
+
+class SecureFileServer:
+    def __init__(self, sandbox_dir: str):
+        self.sandbox = Path(sandbox_dir).resolve()
+        # Ensure sandbox exists and has restricted permissions
+        self.sandbox.mkdir(mode=0o700, exist_ok=True)
     
-    if (valid.length >= this.maxRequests) {
-      return false; // Rate limited
+    def read_file(self, path: str) -> str:
+        full_path = (self.sandbox / path).resolve()
+        
+        # Verify path stays within sandbox
+        if not str(full_path).startswith(str(self.sandbox)):
+            raise PermissionError("Access denied: path escape attempt")
+        
+        return full_path.read_text()
+    
+    def list_files(self) -> list[str]:
+        # Only return files, not directory structure
+        return [f.name for f in self.sandbox.iterdir() if f.is_file()]`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Rate Limiting</h2>
+            <p>Prevent resource exhaustion:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import time
+from collections import defaultdict
+from functools import wraps
+
+class RateLimiter:
+    def __init__(self, calls_per_minute: int = 60):
+        self.limit = calls_per_minute
+        self.calls = defaultdict(list)
+    
+    def check(self, tool_name: str) -> bool:
+        now = time.time()
+        minute_ago = now - 60
+        
+        # Clean old entries
+        self.calls[tool_name] = [
+            t for t in self.calls[tool_name] if t > minute_ago
+        ]
+        
+        if len(self.calls[tool_name]) >= self.limit:
+            return False
+        
+        self.calls[tool_name].append(now)
+        return True
+
+rate_limiter = RateLimiter(calls_per_minute=30)
+
+def rate_limited(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if not rate_limiter.check(func.__name__):
+            raise Exception("Rate limit exceeded. Try again later.")
+        return func(*args, **kwargs)
+    return wrapper`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Secrets Management</h2>
+            <p>Never hardcode secrets:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import os
+from functools import lru_cache
+
+@lru_cache()
+def get_secret(name: str) -> str:
+    """Load secrets from environment variables only."""
+    value = os.environ.get(name)
+    if value is None:
+        raise ValueError(f"Required secret {name} not configured")
+    return value
+
+# Usage in tool
+def call_api():
+    api_key = get_secret("API_KEY")  # Not hardcoded
+    # ... use api_key`}</code>
+            </pre>
+
+            <p>For production, use proper secret managers:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`# AWS Secrets Manager example
+import boto3
+import json
+
+def get_secret_aws(secret_name: str) -> dict:
+    client = boto3.client('secretsmanager')
+    response = client.get_secret_value(SecretId=secret_name)
+    return json.loads(response['SecretString'])`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Audit Logging</h2>
+            <p>Log all tool invocations:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import logging
+import json
+from datetime import datetime
+from typing import Any
+
+# Configure secure logging
+logging.basicConfig(
+    filename='/var/log/mcp/audit.log',
+    format='%(message)s',
+    level=logging.INFO
+)
+audit_logger = logging.getLogger('mcp.audit')
+
+def audit_log(tool_name: str, inputs: dict, result: Any, error: str = None):
+    """Log tool invocations for security audit."""
+    entry = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "tool": tool_name,
+        "inputs": sanitize_for_log(inputs),
+        "success": error is None,
+        "error": error,
     }
-    
-    valid.push(now);
-    this.requests.set(key, valid);
-    return true;
-  }
-}
+    audit_logger.info(json.dumps(entry))
 
-const limiter = new RateLimiter(100, 60000); // 100 req/min
-
-function handleRequest(toolName: string, args: unknown) {
-  if (!limiter.check(toolName)) {
+def sanitize_for_log(data: dict) -> dict:
+    """Remove sensitive fields before logging."""
+    sensitive_keys = ['password', 'token', 'key', 'secret', 'credential']
     return {
-      content: [{ type: "text", text: "Rate limit exceeded" }],
-      isError: true
-    };
-  }
-  // Process request
-}`}</code></pre>
+        k: '[REDACTED]' if any(s in k.lower() for s in sensitive_keys) else v
+        for k, v in data.items()
+    }`}</code>
+            </pre>
 
-        <h2>Secrets Management</h2>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Sandboxing External Commands</h2>
+            <p>If you must run shell commands:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import subprocess
+import shlex
 
-        <p>Never hardcode secrets.</p>
+ALLOWED_COMMANDS = {'ls', 'cat', 'grep', 'wc'}
 
-        <pre><code className="language-typescript">{`// Bad
-const API_KEY = "sk-1234567890";
+def run_safe_command(command: str, args: list[str]) -> str:
+    # Whitelist commands
+    if command not in ALLOWED_COMMANDS:
+        raise PermissionError(f"Command '{command}' not allowed")
+    
+    # Sanitize arguments
+    safe_args = [shlex.quote(arg) for arg in args]
+    
+    # Run with restrictions
+    result = subprocess.run(
+        [command] + safe_args,
+        capture_output=True,
+        text=True,
+        timeout=30,  # Prevent hanging
+        cwd='/tmp/sandbox',  # Restrict working directory
+        env={},  # Clean environment
+    )
+    
+    if result.returncode != 0:
+        raise RuntimeError(f"Command failed: {result.stderr}")
+    
+    return result.stdout[:10000]  # Limit output size`}</code>
+            </pre>
 
-// Good
-const API_KEY = process.env.API_KEY;
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable required");
-}
+            <h2 className="text-2xl font-bold mt-12 mb-4">Network Security</h2>
+            <p>Control outbound connections:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`from urllib.parse import urlparse
 
-// Better: Use a secrets manager
-import { SecretManagerServiceClient } from "@google-cloud/secret-manager";
+ALLOWED_DOMAINS = {'api.github.com', 'api.openai.com'}
 
-async function getSecret(name: string): Promise<string> {
-  const client = new SecretManagerServiceClient();
-  const [version] = await client.accessSecretVersion({
-    name: \`projects/my-project/secrets/\${name}/versions/latest\`
-  });
-  return version.payload?.data?.toString() || "";
-}`}</code></pre>
+def validate_url(url: str) -> str:
+    parsed = urlparse(url)
+    
+    # HTTPS only
+    if parsed.scheme != 'https':
+        raise ValueError("Only HTTPS URLs allowed")
+    
+    # Domain whitelist
+    if parsed.netloc not in ALLOWED_DOMAINS:
+        raise ValueError(f"Domain {parsed.netloc} not in allowlist")
+    
+    # Block internal IPs
+    import socket
+    ip = socket.gethostbyname(parsed.netloc)
+    if ip.startswith(('10.', '172.', '192.168.', '127.')):
+        raise ValueError("Internal network access blocked")
+    
+    return url`}</code>
+            </pre>
 
-        <h2>Audit Logging</h2>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Security Checklist</h2>
+            <p>Before deploying any MCP server:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <li>All inputs validated with strict schemas</li>
+              <li>Path traversal attacks blocked</li>
+              <li>Sensitive files/directories blocked</li>
+              <li>Rate limiting implemented</li>
+              <li>Secrets loaded from environment/secret manager</li>
+              <li>Audit logging enabled</li>
+              <li>Outbound network calls restricted</li>
+              <li>Shell commands sandboxed (or disabled)</li>
+              <li>Resource limits set (timeouts, max sizes)</li>
+              <li>Error messages don't leak sensitive info</li>
+            </ul>
 
-        <p>Log everything. You&apos;ll need it.</p>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Conclusion</h2>
+            <p>
+              Security in MCP isn't about paranoia—it's about responsibility. These servers interact 
+              with powerful AI models that can be manipulated. Build with defense in depth, validate 
+              everything, and log for accountability.
+            </p>
+            <p>
+              Your users trust you with their AI assistant's capabilities. Earn that trust.
+            </p>
+          </div>
 
-        <pre><code className="language-typescript">{`interface AuditLog {
-  timestamp: string;
-  tool: string;
-  args: unknown;
-  result: "success" | "error" | "denied";
-  duration: number;
-  error?: string;
-}
+          {/* Email Signup */}
+          <div className="mt-16 p-8 bg-gray-900 rounded-xl border border-gray-800">
+            <h3 className="text-xl font-bold mb-4">Get MCP Tips & Tutorials</h3>
+            <p className="text-gray-400 mb-6">
+              Join developers building AI-powered tools. Get tutorials, code examples, and updates.
+            </p>
+            <EmailSignup site="mcp" />
+          </div>
 
-function logAudit(log: AuditLog) {
-  // Redact sensitive fields
-  const sanitized = {
-    ...log,
-    args: redactSensitive(log.args)
-  };
-  console.log(JSON.stringify(sanitized));
-}
-
-function redactSensitive(obj: unknown): unknown {
-  if (typeof obj !== "object" || obj === null) return obj;
-  
-  const sensitive = ["password", "token", "secret", "key", "auth"];
-  const result: Record<string, unknown> = {};
-  
-  for (const [key, value] of Object.entries(obj)) {
-    if (sensitive.some(s => key.toLowerCase().includes(s))) {
-      result[key] = "[REDACTED]";
-    } else {
-      result[key] = redactSensitive(value);
-    }
-  }
-  return result;
-}`}</code></pre>
-
-        <h2>Principle of Least Privilege</h2>
-
-        <p>Only expose what&apos;s necessary.</p>
-
-        <pre><code className="language-typescript">{`// Don't do this
-tools: [
-  { name: "execute_sql", description: "Run any SQL query" }
-]
-
-// Do this
-tools: [
-  { name: "get_user_orders", description: "Get orders for a user ID" },
-  { name: "get_product_info", description: "Get product details by SKU" },
-  { name: "count_inventory", description: "Count items in stock" }
-]`}</code></pre>
-
-        <p>Specific, limited tools are safer than general-purpose ones.</p>
-
-        <h2>Sandboxing</h2>
-
-        <p>Isolate dangerous operations.</p>
-
-        <pre><code className="language-typescript">{`import { VM } from "vm2";
-
-function safeEval(code: string, context: object) {
-  const vm = new VM({
-    timeout: 1000,
-    sandbox: context,
-    eval: false,
-    wasm: false
-  });
-  
-  return vm.run(code);
-}`}</code></pre>
-
-        <p>Or use Docker for complete isolation:</p>
-
-        <pre><code className="language-yaml">{`# docker-compose.yml
-services:
-  mcp-server:
-    build: .
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
-    mem_limit: 256m
-    cpus: 0.5`}</code></pre>
-
-        <h2>Environment Separation</h2>
-
-        <p>Don&apos;t mix production and development.</p>
-
-        <pre><code className="language-typescript">{`const config = {
-  development: {
-    database: "dev_db",
-    allowedPaths: ["/tmp", "./data"],
-    rateLimit: 1000
-  },
-  production: {
-    database: process.env.DB_NAME,
-    allowedPaths: ["/app/data"],
-    rateLimit: 100
-  }
-};
-
-const env = process.env.NODE_ENV || "development";
-const settings = config[env as keyof typeof config];`}</code></pre>
-
-        <h2>Security Checklist</h2>
-
-        <p>Before deploying any MCP server:</p>
-
-        <ul>
-          <li>All inputs validated with strict schemas</li>
-          <li>No path traversal possible</li>
-          <li>Rate limiting implemented</li>
-          <li>Secrets in environment variables or secret manager</li>
-          <li>Audit logging enabled</li>
-          <li>Tools follow least privilege</li>
-          <li>Error messages don&apos;t leak sensitive info</li>
-          <li>Dependencies scanned for vulnerabilities</li>
-          <li>Container runs as non-root user</li>
-          <li>Network access restricted to necessary endpoints</li>
-        </ul>
-
-        <h2>Related Guides</h2>
-
-        <ul>
-          <li><Link href="/mcp/mcp-typescript-server-guide">Building TypeScript MCP servers</Link></li>
-          <li><Link href="/mcp/mcp-docker-deployment">Docker deployment</Link></li>
-          <li><Link href="/mcp/mcp-error-handling-patterns">Error handling patterns</Link></li>
-        </ul>
-
-        <hr />
-
-        <p>
-          <strong>Questions about MCP security?</strong> Reach out on{" "}
-          <a href="https://twitter.com/kaigritun">Twitter</a>.
-        </p>
+          {/* Related */}
+          <div className="mt-12 pt-8 border-t border-gray-800">
+            <h3 className="text-lg font-semibold mb-4">Related Tutorials</h3>
+            <div className="grid gap-4">
+              <Link href="/mcp/mcp-typescript-tutorial" className="p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+                <span className="text-blue-400">How to Build an MCP Server with TypeScript</span>
+                <p className="text-sm text-gray-500 mt-1">Type-safe MCP server development</p>
+              </Link>
+              <Link href="/mcp/mcp-database-integration" className="p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+                <span className="text-blue-400">MCP Database Integration</span>
+                <p className="text-sm text-gray-500 mt-1">Connect AI to databases securely</p>
+              </Link>
+            </div>
+          </div>
+        </div>
       </article>
-
-      <div className="mt-16">
-        <EmailSignup />
-      </div>
-    </main>
+    </div>
   );
 }

@@ -1,123 +1,118 @@
-import { Metadata } from 'next';
+import Link from "next/link";
+import type { Metadata } from "next";
 import EmailSignup from "@/components/EmailSignup";
 
 export const metadata: Metadata = {
-  title: 'Building Your First MCP Server in TypeScript | MCP Tutorials',
-  description: 'Step-by-step tutorial to build a complete MCP server in TypeScript. Learn project setup, tool registration, error handling, and Claude Desktop integration.',
-  keywords: ['MCP server TypeScript', 'MCP tutorial', 'TypeScript MCP', 'Model Context Protocol', 'Claude Desktop MCP'],
-  openGraph: {
-    title: 'Building Your First MCP Server in TypeScript',
-    description: 'Complete tutorial for building MCP servers with TypeScript and the official SDK.',
-    type: 'article',
-  },
-}
+  title: "How to Build an MCP Server with TypeScript (2026 Guide) | Kai Gritun",
+  description: "Learn to build a production-ready MCP server with TypeScript. Type-safe tool definitions, Zod validation, and best practices for reliable AI tool integration.",
+  keywords: ["MCP TypeScript", "MCP server TypeScript", "Model Context Protocol TypeScript", "type-safe MCP", "MCP Zod", "TypeScript AI tools"],
+};
 
 export default function MCPTypeScriptTutorial() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        {/* Breadcrumb */}
-        <nav className="mb-8">
-          <a href="/mcp" className="text-purple-400 hover:text-purple-300">← Back to MCP Tutorials</a>
-        </nav>
-
-        {/* Header */}
-        <header className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 text-sm font-medium bg-blue-500/20 text-blue-300 rounded-full">Tutorial</span>
-            <span className="text-gray-400 text-sm">14 min read</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Building Your First MCP Server in TypeScript
-          </h1>
-          <p className="text-xl text-gray-300">
-            A complete walkthrough from project setup to Claude Desktop integration. Build a working MCP server in under 30 minutes.
-          </p>
-        </header>
-
-        {/* Prerequisites */}
-        <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 mb-12">
-          <h3 className="text-lg font-semibold text-blue-300 mb-3">Prerequisites</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li>• Node.js 18+</li>
-            <li>• TypeScript basics</li>
-            <li>• Claude Desktop installed (optional, for testing)</li>
-          </ul>
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Header */}
+      <header className="border-b border-gray-800">
+        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="font-semibold hover:text-blue-400 transition-colors">
+            Kai Gritun
+          </Link>
+          <nav className="flex gap-6 text-sm text-gray-400">
+            <Link href="/mcp" className="hover:text-white transition-colors">MCP Tutorials</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+          </nav>
         </div>
+      </header>
 
-        {/* Table of Contents */}
-        <div className="bg-gray-800/50 rounded-xl p-6 mb-12 border border-gray-700">
-          <h2 className="text-lg font-semibold text-white mb-4">Contents</h2>
-          <ul className="space-y-2 text-gray-300">
-            <li><a href="#step-1" className="hover:text-purple-400">→ Step 1: Project Setup</a></li>
-            <li><a href="#step-2" className="hover:text-purple-400">→ Step 2: Basic Server Structure</a></li>
-            <li><a href="#step-3" className="hover:text-purple-400">→ Step 3: Build and Test</a></li>
-            <li><a href="#step-4" className="hover:text-purple-400">→ Step 4: Add More Tools</a></li>
-            <li><a href="#step-5" className="hover:text-purple-400">→ Step 5: Connect to Claude Desktop</a></li>
-            <li><a href="#step-6" className="hover:text-purple-400">→ Step 6: Error Handling</a></li>
-            <li><a href="#next-steps" className="hover:text-purple-400">→ Next Steps</a></li>
-          </ul>
-        </div>
-
-        {/* Article Content */}
-        <article className="prose prose-invert prose-lg max-w-none">
-          
-          {/* Step 1 */}
-          <section id="step-1" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 1: Project Setup</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Create a new directory and initialize your TypeScript project:
+      {/* Article */}
+      <article className="py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          {/* Meta */}
+          <div className="mb-8">
+            <Link href="/mcp" className="text-blue-400 hover:text-blue-300 text-sm mb-4 inline-block">
+              ← Back to MCP Tutorials
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              How to Build an MCP Server with TypeScript
+            </h1>
+            <p className="text-gray-400 text-lg mb-4">
+              TypeScript is the go-to choice for MCP development. Type safety catches bugs before runtime, 
+              autocomplete speeds up development, and the tooling is mature.
             </p>
+            <div className="flex gap-4 text-sm text-gray-500">
+              <span>February 4, 2026</span>
+              <span>·</span>
+              <span>10 min read</span>
+            </div>
+          </div>
 
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">Terminal</div>
-              <pre className="text-sm text-gray-300"><code>{`mkdir my-mcp-server
-cd my-mcp-server
+          {/* Content */}
+          <div className="prose prose-invert prose-lg max-w-none">
+            <h2 className="text-2xl font-bold mt-12 mb-4">Why TypeScript for MCP?</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <li><strong>Type safety</strong> - Catch protocol errors at compile time</li>
+              <li><strong>Better IDE support</strong> - Autocomplete for MCP schemas</li>
+              <li><strong>Refactoring confidence</strong> - Change code without fear</li>
+              <li><strong>Documentation built-in</strong> - Types serve as docs</li>
+            </ul>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Prerequisites</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <li>Node.js 18+</li>
+              <li>npm or pnpm</li>
+              <li>Basic TypeScript knowledge</li>
+              <li>Understanding of MCP concepts</li>
+            </ul>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Project Setup</h2>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`mkdir mcp-typescript-server
+cd mcp-typescript-server
 npm init -y
 npm install @modelcontextprotocol/sdk zod
-npm install -D typescript @types/node
-npx tsc --init`}</code></pre>
-            </div>
+npm install -D typescript @types/node tsx`}</code>
+            </pre>
 
-            <p className="text-gray-300 mb-6">
-              Update <code className="text-purple-400">tsconfig.json</code>:
-            </p>
-
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">tsconfig.json</div>
-              <pre className="text-sm text-gray-300"><code>{`{
+            <p>Create <code>tsconfig.json</code>:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`{
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "outDir": "./dist",
-    "strict": true
-  }
-}`}</code></pre>
-            </div>
-          </section>
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"]
+}`}</code>
+            </pre>
 
-          {/* Step 2 */}
-          <section id="step-2" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 2: Basic Server Structure</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Create <code className="text-purple-400">src/index.ts</code>:
-            </p>
-
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">src/index.ts</div>
-              <pre className="text-sm text-gray-300"><code>{`import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+            <h2 className="text-2xl font-bold mt-12 mb-4">Basic Server Structure</h2>
+            <p>Create <code>src/index.ts</code>:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import { z } from "zod";
 
+// Define tool input schemas with Zod
+const GreetInputSchema = z.object({
+  name: z.string().describe("Name to greet"),
+  formal: z.boolean().optional().describe("Use formal greeting"),
+});
+
+type GreetInput = z.infer<typeof GreetInputSchema>;
+
+// Create server instance
 const server = new Server(
   {
-    name: "my-mcp-server",
+    name: "typescript-mcp-server",
     version: "1.0.0",
   },
   {
@@ -131,15 +126,13 @@ const server = new Server(
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
-      name: "hello",
-      description: "Says hello to someone",
+      name: "greet",
+      description: "Generate a greeting message",
       inputSchema: {
         type: "object",
         properties: {
-          name: {
-            type: "string",
-            description: "Name to greet",
-          },
+          name: { type: "string", description: "Name to greet" },
+          formal: { type: "boolean", description: "Use formal greeting" },
         },
         required: ["name"],
       },
@@ -149,269 +142,168 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 
 // Handle tool calls
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  if (request.params.name === "hello") {
-    const name = request.params.arguments?.name as string;
+  const { name, arguments: args } = request.params;
+
+  if (name === "greet") {
+    const input = GreetInputSchema.parse(args);
+    const greeting = input.formal
+      ? \`Good day, \${input.name}. How may I assist you?\`
+      : \`Hey \${input.name}! What's up?\`;
+
     return {
-      content: [
-        {
-          type: "text",
-          text: \`Hello, \${name}! 👋\`,
-        },
-      ],
+      content: [{ type: "text", text: greeting }],
     };
   }
-  throw new Error(\`Unknown tool: \${request.params.name}\`);
+
+  throw new Error(\`Unknown tool: \${name}\`);
 });
 
 // Start server
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("MCP server running");
+  console.error("TypeScript MCP server running");
 }
 
-main().catch(console.error);`}</code></pre>
-            </div>
-          </section>
+main().catch(console.error);`}</code>
+            </pre>
 
-          {/* Step 3 */}
-          <section id="step-3" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 3: Build and Test</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Add scripts to <code className="text-purple-400">package.json</code>:
-            </p>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Type-Safe Tool Handlers</h2>
+            <p>Create a pattern for type-safe tool registration:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`// src/tools.ts
+import { z } from "zod";
 
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">package.json (partial)</div>
-              <pre className="text-sm text-gray-300"><code>{`{
-  "type": "module",
+// Tool definition type
+interface ToolDefinition<T extends z.ZodType> {
+  name: string;
+  description: string;
+  schema: T;
+  handler: (input: z.infer<T>) => Promise<string>;
+}
+
+// Create a type-safe tool
+function createTool<T extends z.ZodType>(def: ToolDefinition<T>) {
+  return def;
+}
+
+// Example tools
+export const calculateTool = createTool({
+  name: "calculate",
+  description: "Perform mathematical calculations",
+  schema: z.object({
+    expression: z.string().describe("Math expression to evaluate"),
+  }),
+  handler: async ({ expression }) => {
+    const result = Function(\`"use strict"; return (\${expression})\`)();
+    return \`Result: \${result}\`;
+  },
+});`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Error Handling</h2>
+            <p>TypeScript helps catch errors, but runtime errors still happen:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`import { McpError, ErrorCode } from "@modelcontextprotocol/sdk/types.js";
+
+export function handleToolError(error: unknown, toolName: string): never {
+  if (error instanceof z.ZodError) {
+    throw new McpError(
+      ErrorCode.InvalidParams,
+      \`Invalid parameters for \${toolName}: \${error.message}\`
+    );
+  }
+
+  if (error instanceof Error) {
+    throw new McpError(
+      ErrorCode.InternalError,
+      \`\${toolName} failed: \${error.message}\`
+    );
+  }
+
+  throw new McpError(ErrorCode.InternalError, \`Unknown error in \${toolName}\`);
+}`}</code>
+            </pre>
+
+            <h2 className="text-2xl font-bold mt-12 mb-4">Building and Running</h2>
+            <p>Add scripts to <code>package.json</code>:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`{
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
   }
-}`}</code></pre>
-            </div>
+}`}</code>
+            </pre>
 
-            <p className="text-gray-300 mb-6">Build and test:</p>
+            <p>Build and test:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`npm run build
+echo '{"jsonrpc":"2.0","method":"tools/list","id":1}' | node dist/index.js`}</code>
+            </pre>
 
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">Terminal</div>
-              <pre className="text-sm text-gray-300"><code>{`# Build
-npm run build
-
-# Test locally
-echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npm run start`}</code></pre>
-            </div>
-
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-6">
-              <p className="text-green-200 text-sm">
-                <strong>Success!</strong> You should see a JSON response listing your "hello" tool.
-              </p>
-            </div>
-          </section>
-
-          {/* Step 4 */}
-          <section id="step-4" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 4: Add More Tools</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Let's add a practical tool—a word counter:
-            </p>
-
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">src/index.ts (updated)</div>
-              <pre className="text-sm text-gray-300"><code>{`server.setRequestHandler(ListToolsRequestSchema, async () => ({
-  tools: [
-    {
-      name: "hello",
-      description: "Says hello to someone",
-      inputSchema: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Name to greet" },
-        },
-        required: ["name"],
-      },
-    },
-    {
-      name: "word_count",
-      description: "Counts words in text",
-      inputSchema: {
-        type: "object",
-        properties: {
-          text: { type: "string", description: "Text to count words in" },
-        },
-        required: ["text"],
-      },
-    },
-  ],
-}));
-
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  switch (request.params.name) {
-    case "hello":
-      const name = request.params.arguments?.name as string;
-      return {
-        content: [{ type: "text", text: \`Hello, \${name}! 👋\` }],
-      };
-    
-    case "word_count":
-      const text = request.params.arguments?.text as string;
-      const words = text.trim().split(/\\s+/).length;
-      return {
-        content: [{ type: "text", text: \`Word count: \${words}\` }],
-      };
-    
-    default:
-      throw new Error(\`Unknown tool: \${request.params.name}\`);
-  }
-});`}</code></pre>
-            </div>
-          </section>
-
-          {/* Step 5 */}
-          <section id="step-5" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 5: Connect to Claude Desktop</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Edit <code className="text-purple-400">~/Library/Application Support/Claude/claude_desktop_config.json</code> (macOS) or the equivalent path on your OS:
-            </p>
-
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">claude_desktop_config.json</div>
-              <pre className="text-sm text-gray-300"><code>{`{
+            <h2 className="text-2xl font-bold mt-12 mb-4">Claude Desktop Configuration</h2>
+            <p>Add to <code>claude_desktop_config.json</code>:</p>
+            <pre className="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{`{
   "mcpServers": {
-    "my-server": {
+    "typescript-server": {
       "command": "node",
-      "args": ["/absolute/path/to/my-mcp-server/dist/index.js"]
+      "args": ["/path/to/mcp-typescript-server/dist/index.js"]
     }
   }
-}`}</code></pre>
-            </div>
+}`}</code>
+            </pre>
 
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mb-6">
-              <p className="text-amber-200 text-sm">
-                <strong>Important:</strong> Use the absolute path to your compiled JavaScript file. Restart Claude Desktop after editing the config.
-              </p>
-            </div>
+            <h2 className="text-2xl font-bold mt-12 mb-4">Best Practices</h2>
+            <ol className="list-decimal list-inside space-y-2 text-gray-300">
+              <li><strong>Use Zod for all input validation</strong> - Runtime type checking is essential</li>
+              <li><strong>Export types from schemas</strong> - <code>z.infer&lt;typeof Schema&gt;</code> keeps types in sync</li>
+              <li><strong>Handle errors explicitly</strong> - Map errors to proper MCP error codes</li>
+              <li><strong>Log to stderr</strong> - stdout is for MCP protocol communication</li>
+              <li><strong>Use strict TypeScript config</strong> - Catch more bugs at compile time</li>
+            </ol>
 
-            <p className="text-gray-300 mb-6">
-              Your tools now appear in the 🔨 menu in Claude Desktop!
+            <h2 className="text-2xl font-bold mt-12 mb-4">Next Steps</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-300">
+              <li>Add resources with typed schemas</li>
+              <li>Implement prompts with template types</li>
+              <li>Add comprehensive tests with Vitest</li>
+              <li>Set up CI/CD with type checking</li>
+            </ul>
+
+            <p className="mt-8">
+              TypeScript and MCP are a natural fit. The type system catches protocol errors early, 
+              making development faster and servers more reliable.
             </p>
-          </section>
-
-          {/* Step 6 */}
-          <section id="step-6" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Step 6: Error Handling</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Add proper error handling with Zod validation:
-            </p>
-
-            <div className="bg-gray-950 rounded-lg p-6 mb-6 overflow-x-auto">
-              <div className="text-xs text-gray-500 mb-2">src/index.ts (with validation)</div>
-              <pre className="text-sm text-gray-300"><code>{`import { z } from "zod";
-
-const HelloArgsSchema = z.object({
-  name: z.string().min(1),
-});
-
-const WordCountArgsSchema = z.object({
-  text: z.string().min(1),
-});
-
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  try {
-    switch (request.params.name) {
-      case "hello": {
-        const args = HelloArgsSchema.parse(request.params.arguments);
-        return {
-          content: [{ type: "text", text: \`Hello, \${args.name}! 👋\` }],
-        };
-      }
-      
-      case "word_count": {
-        const args = WordCountArgsSchema.parse(request.params.arguments);
-        const words = args.text.trim().split(/\\s+/).length;
-        return {
-          content: [{ type: "text", text: \`Word count: \${words}\` }],
-        };
-      }
-      
-      default:
-        throw new Error(\`Unknown tool: \${request.params.name}\`);
-    }
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return {
-        content: [{ 
-          type: "text", 
-          text: \`Invalid arguments: \${error.message}\` 
-        }],
-        isError: true,
-      };
-    }
-    throw error;
-  }
-});`}</code></pre>
-            </div>
-          </section>
-
-          {/* Next Steps */}
-          <section id="next-steps" className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Next Steps</h2>
-            
-            <p className="text-gray-300 mb-6">
-              Now that you have a working MCP server, explore these advanced topics:
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                <h4 className="text-white font-semibold mb-2">📦 Add Resources</h4>
-                <p className="text-gray-400 text-sm">Expose data that Claude can read and reference</p>
-              </div>
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                <h4 className="text-white font-semibold mb-2">📝 Implement Prompts</h4>
-                <p className="text-gray-400 text-sm">Create reusable prompt templates</p>
-              </div>
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                <h4 className="text-white font-semibold mb-2">🌐 HTTP Transport</h4>
-                <p className="text-gray-400 text-sm">Deploy to a remote server with SSE</p>
-              </div>
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                <h4 className="text-white font-semibold mb-2">📤 Publish to npm</h4>
-                <p className="text-gray-400 text-sm">Share your server with others</p>
-              </div>
-            </div>
-          </section>
-
-        </article>
-
-        {/* Email Signup */}
-        <div className="my-16">
-          <EmailSignup />
-        </div>
-
-        {/* Related Links */}
-        <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-8 border border-purple-500/30 mb-16">
-          <h3 className="text-xl font-semibold text-white mb-4">Continue Learning</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li>→ <a href="/mcp/mcp-resources-guide" className="text-purple-400 hover:text-purple-300">MCP Resources Deep Dive</a></li>
-            <li>→ <a href="/mcp/mcp-vs-langchain" className="text-purple-400 hover:text-purple-300">MCP vs LangChain: When to Use Each</a></li>
-            <li>→ <a href="/mcp/mcp-error-handling" className="text-purple-400 hover:text-purple-300">Advanced Error Handling Patterns</a></li>
-            <li>→ <a href="/mcp/mcp-docker-deployment" className="text-purple-400 hover:text-purple-300">Deploy with Docker</a></li>
-          </ul>
-        </div>
-
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-700">
-          <div className="flex items-center justify-between">
-            <a href="/mcp" className="text-purple-400 hover:text-purple-300">← Back to MCP Tutorials</a>
-            <span className="text-gray-500 text-sm">February 3, 2026</span>
           </div>
-        </footer>
-      </div>
-    </main>
-  )
+
+          {/* Email Signup */}
+          <div className="mt-16 p-8 bg-gray-900 rounded-xl border border-gray-800">
+            <h3 className="text-xl font-bold mb-4">Get MCP Tips & Tutorials</h3>
+            <p className="text-gray-400 mb-6">
+              Join developers building AI-powered tools. Get tutorials, code examples, and updates.
+            </p>
+            <EmailSignup site="mcp" />
+          </div>
+
+          {/* Related */}
+          <div className="mt-12 pt-8 border-t border-gray-800">
+            <h3 className="text-lg font-semibold mb-4">Related Tutorials</h3>
+            <div className="grid gap-4">
+              <Link href="/mcp/how-to-build-mcp-server-python" className="p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+                <span className="text-blue-400">How to Build an MCP Server in Python</span>
+                <p className="text-sm text-gray-500 mt-1">Step-by-step Python tutorial for MCP development</p>
+              </Link>
+              <Link href="/mcp/mcp-security-best-practices" className="p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+                <span className="text-blue-400">MCP Security Best Practices</span>
+                <p className="text-sm text-gray-500 mt-1">Essential security patterns for MCP servers</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  );
 }
