@@ -105,12 +105,6 @@ const tutorials = [
     tag: "Debug",
   },
   {
-    title: "MCP Debugging Guide",
-    description: "Deep dive into debugging techniques and tools.",
-    href: "/mcp/mcp-debugging-guide",
-    tag: "Debug",
-  },
-  {
     title: "MCP Authentication Guide",
     description: "API keys, OAuth, secrets managers.",
     href: "/mcp/mcp-authentication-guide",
@@ -221,28 +215,26 @@ export default function MCPPage() {
         </div>
       </section>
 
-      {/* Recommended Tools */}
+      {/* Chatbase CTA */}
       <section className="px-6 py-12 border-t border-neutral-800/50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Recommended</h2>
-          <a 
-            href="https://link.chatbase.co/2MAaO8m"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-5 rounded-lg border border-neutral-800 hover:border-amber-500/50 transition-colors group"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="font-medium group-hover:text-amber-500 transition-colors mb-1">
-                  Chatbase — Build AI Chatbots Fast
-                </h3>
-                <p className="text-sm text-neutral-500">
-                  Train ChatGPT on your data and embed it on your site. No code required. Works great alongside MCP for customer-facing AI.
-                </p>
-              </div>
-              <span className="text-xs font-mono text-amber-500/70 shrink-0">sponsor</span>
-            </div>
-          </a>
+          <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20 rounded-lg p-6">
+            <h2 className="text-lg font-semibold mb-2">Build Your Own AI Chatbot</h2>
+            <p className="text-neutral-400 text-sm mb-4">
+              Ready to deploy an AI assistant? Chatbase lets you create custom chatbots trained on your data—no coding required. Perfect for adding AI support to your MCP projects.
+            </p>
+            <a 
+              href="https://link.chatbase.co/2MAaO8m" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-medium px-4 py-2 rounded text-sm transition-colors"
+            >
+              Try Chatbase Free
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
