@@ -105,6 +105,12 @@ const tutorials = [
     tag: "Debug",
   },
   {
+    title: "MCP Debugging Guide",
+    description: "Deep dive into debugging techniques and tools.",
+    href: "/mcp/mcp-debugging-guide",
+    tag: "Debug",
+  },
+  {
     title: "MCP Authentication Guide",
     description: "API keys, OAuth, secrets managers.",
     href: "/mcp/mcp-authentication-guide",
