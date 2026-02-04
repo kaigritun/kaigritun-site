@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "filesystem",
+    "name": "Filesystem",
+    "category": "Official",
+    "description": "Read, write, and manage files on your local filesystem. The foundation for AI agents that work with your documents and code.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "npm": "@modelcontextprotocol/server-filesystem",
+    "useCases": ["File management", "Code editing", "Document processing", "Backup automation"]
+  },
+  {
+    "slug": "github",
+    "name": "GitHub",
+    "category": "Official",
+    "description": "Interact with GitHub repositories, issues, pull requests, and more. Essential for AI-powered development workflows.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+    "npm": "@modelcontextprotocol/server-github",
+    "useCases": ["Repository management", "Issue tracking", "Code review", "CI/CD integration"]
+  },
+  {
+    "slug": "postgres",
+    "name": "PostgreSQL",
+    "category": "Official",
+    "description": "Query and manage PostgreSQL databases. Perfect for AI agents that need to analyze or manipulate structured data.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
+    "npm": "@modelcontextprotocol/server-postgres",
+    "useCases": ["Database queries", "Data analysis", "Schema management", "Report generation"]
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "category": "Official",
+    "description": "Send messages, manage channels, and interact with Slack workspaces. Build AI assistants that communicate with your team.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+    "npm": "@modelcontextprotocol/server-slack",
+    "useCases": ["Team notifications", "Channel management", "Message search", "Workflow automation"]
+  },
+  {
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "category": "Official",
+    "description": "Access and manage files in Google Drive. Enable AI to work with your cloud documents and spreadsheets.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+    "npm": "@modelcontextprotocol/server-gdrive",
+    "useCases": ["Document access", "File organization", "Collaboration", "Backup management"]
+  },
+  {
+    "slug": "fetch",
+    "name": "Fetch",
+    "category": "Official",
+    "description": "Make HTTP requests and fetch web content. The gateway for AI to interact with APIs and web pages.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+    "npm": "@modelcontextprotocol/server-fetch",
+    "useCases": ["API integration", "Web scraping", "Data fetching", "Webhook handling"]
+  },
+  {
+    "slug": "puppeteer",
+    "name": "Puppeteer",
+    "category": "Official",
+    "description": "Control headless Chrome for browser automation. Build AI that can navigate, screenshot, and interact with web pages.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+    "npm": "@modelcontextprotocol/server-puppeteer",
+    "useCases": ["Browser automation", "Screenshots", "Web testing", "Form filling"]
+  },
+  {
+    "slug": "memory",
+    "name": "Memory",
+    "category": "Official",
+    "description": "Persistent memory storage for AI conversations. Give your AI agents the ability to remember across sessions.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+    "npm": "@modelcontextprotocol/server-memory",
+    "useCases": ["Conversation history", "User preferences", "Context retention", "Knowledge base"]
+  },
+  {
+    "slug": "sqlite",
+    "name": "SQLite",
+    "category": "Official",
+    "description": "Work with SQLite databases for lightweight data storage. Perfect for local AI applications and prototypes.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
+    "npm": "@modelcontextprotocol/server-sqlite",
+    "useCases": ["Local storage", "Prototyping", "Data caching", "Offline apps"]
+  },
+  {
+    "slug": "brave-search",
+    "name": "Brave Search",
+    "category": "Official",
+    "description": "Search the web using Brave's privacy-focused search engine. Add real-time web knowledge to your AI.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+    "npm": "@modelcontextprotocol/server-brave-search",
+    "useCases": ["Web search", "Research", "Fact checking", "News monitoring"]
+  },
+  {
+    "slug": "sequential-thinking",
+    "name": "Sequential Thinking",
+    "category": "Community",
+    "description": "Enable chain-of-thought reasoning patterns. Help AI break down complex problems into manageable steps.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+    "npm": "@modelcontextprotocol/server-sequential-thinking",
+    "useCases": ["Problem solving", "Planning", "Analysis", "Decision making"]
+  },
+  {
+    "slug": "time",
+    "name": "Time",
+    "category": "Official",
+    "description": "Access current time and timezone information. Essential for scheduling and time-aware AI applications.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+    "npm": "@modelcontextprotocol/server-time",
+    "useCases": ["Scheduling", "Timezone conversion", "Reminders", "Event planning"]
+  },
+  {
+    "slug": "git",
+    "name": "Git",
+    "category": "Official",
+    "description": "Direct Git repository operations. Enable AI to manage version control without GitHub's API.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+    "npm": "@modelcontextprotocol/server-git",
+    "useCases": ["Version control", "Code commits", "Branch management", "History analysis"]
+  },
+  {
+    "slug": "sentry",
+    "name": "Sentry",
+    "category": "Official",
+    "description": "Access error tracking and performance data from Sentry. Build AI that helps debug and monitor applications.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry",
+    "npm": "@modelcontextprotocol/server-sentry",
+    "useCases": ["Error tracking", "Performance monitoring", "Debugging", "Alert management"]
+  },
+  {
+    "slug": "aws-kb-retrieval",
+    "name": "AWS Knowledge Base",
+    "category": "Official",
+    "description": "Retrieve information from AWS Knowledge Bases. Connect AI to enterprise knowledge management systems.",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval",
+    "npm": "@modelcontextprotocol/server-aws-kb-retrieval",
+    "useCases": ["Knowledge retrieval", "RAG applications", "Enterprise search", "Documentation access"]
+  }
+]
