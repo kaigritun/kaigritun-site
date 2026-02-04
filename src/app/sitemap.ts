@@ -1,142 +1,64 @@
 import { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kaigritun.com'
   
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    // MCP Tutorials
-    {
-      url: `${baseUrl}/mcp`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/mcp/how-to-build-mcp-server-python`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-vs-function-calling`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/best-mcp-servers-2025`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-resources-prompts-guide`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/troubleshooting-mcp-servers`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/how-to-build-mcp-server-typescript`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/claude-desktop-mcp-setup`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-authentication-guide`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/testing-mcp-servers`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-docker-deployment`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-performance-optimization`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/building-mcp-clients`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-cursor-ide-setup`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/multi-tenant-mcp-architecture`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-error-handling-patterns`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-webhooks-event-driven`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/mcp-database-integrations`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/mcp/building-rag-with-mcp`,
-      lastModified: new Date('2026-02-03'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Other pages
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/chatgpt-vs-claude`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+  // Static pages
+  const staticPages = [
+    { url: baseUrl, changeFrequency: 'weekly' as const, priority: 1 },
+    { url: `${baseUrl}/mcp`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${baseUrl}/mcp/servers`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${baseUrl}/mcp/guides`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${baseUrl}/mcp/starter-kit`, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${baseUrl}/services`, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/chatgpt-vs-claude`, changeFrequency: 'monthly' as const, priority: 0.6 },
   ]
+  
+  // Dynamically get all MCP article pages
+  const mcpDir = path.join(process.cwd(), 'src/app/mcp')
+  let mcpPages: { url: string; changeFrequency: 'monthly'; priority: number }[] = []
+  
+  try {
+    const mcpFolders = fs.readdirSync(mcpDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .filter(dirent => !['servers', 'guides', 'starter-kit'].includes(dirent.name)) // Exclude static pages
+      .map(dirent => dirent.name)
+    
+    mcpPages = mcpFolders.map(folder => ({
+      url: `${baseUrl}/mcp/${folder}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }))
+  } catch (error) {
+    console.error('Error reading MCP directory:', error)
+  }
+
+  // Dynamically get MCP server pages
+  const serversDir = path.join(process.cwd(), 'src/app/mcp/servers')
+  let serverPages: { url: string; changeFrequency: 'monthly'; priority: number }[] = []
+  
+  try {
+    const serverFolders = fs.readdirSync(serversDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name)
+    
+    serverPages = serverFolders.map(folder => ({
+      url: `${baseUrl}/mcp/servers/${folder}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  } catch (error) {
+    console.error('Error reading servers directory:', error)
+  }
+
+  const allPages = [...staticPages, ...mcpPages, ...serverPages]
+
+  return allPages.map(({ url, changeFrequency, priority }) => ({
+    url,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }))
 }
