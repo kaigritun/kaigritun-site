@@ -221,6 +221,31 @@ export default function MCPPage() {
         </div>
       </section>
 
+      {/* Recommended Tools */}
+      <section className="px-6 py-12 border-t border-neutral-800/50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Recommended</h2>
+          <a 
+            href="https://link.chatbase.co/2MAaO8m"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-5 rounded-lg border border-neutral-800 hover:border-amber-500/50 transition-colors group"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="font-medium group-hover:text-amber-500 transition-colors mb-1">
+                  Chatbase — Build AI Chatbots Fast
+                </h3>
+                <p className="text-sm text-neutral-500">
+                  Train ChatGPT on your data and embed it on your site. No code required. Works great alongside MCP for customer-facing AI.
+                </p>
+              </div>
+              <span className="text-xs font-mono text-amber-500/70 shrink-0">sponsor</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="px-6 py-8 border-t border-neutral-800/50">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
